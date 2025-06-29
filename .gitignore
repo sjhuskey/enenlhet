@@ -2,6 +2,8 @@ Icon?
 "Icon\r"
 .dropbox
 .ipynb_checkpoints/
+# Directory for Audio and ELAN files
+data/
 
 # LibreOffice locks
 .~lock.*#
