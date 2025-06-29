@@ -375,9 +375,9 @@ class EnenlhetDataProcessor:
 if __name__ == "__main__":
     # Example usage
     processor = EnenlhetDataProcessor(
-        eaf_dir="/path/to/elan/files",
-        wav_dir="/path/to/wav/files",
-        output_dir="/path/to/output"
+        eaf_dir="/users/sjhuskey/Downloads/Enenlhet/have_transcripts",
+        wav_dir="/users/sjhuskey/Downloads/Enenlhet/have_transcripts",
+        output_dir="/users/sjhuskey/Python/heaton/python/enenlhet_data_processed"
     )
     
     # Process the entire corpus
