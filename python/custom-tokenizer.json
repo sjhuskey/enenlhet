@@ -1,0 +1,4873 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "[PAD]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "[UNK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "[CLS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "[SEP]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 4,
+      "content": "[MASK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": {
+    "type": "Sequence",
+    "normalizers": [
+      {
+        "type": "NFD"
+      },
+      {
+        "type": "Lowercase"
+      },
+      {
+        "type": "StripAccents"
+      }
+    ]
+  },
+  "pre_tokenizer": {
+    "type": "Whitespace"
+  },
+  "post_processor": null,
+  "decoder": null,
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "[UNK]",
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "[PAD]": 0,
+      "[UNK]": 1,
+      "[CLS]": 2,
+      "[SEP]": 3,
+      "[MASK]": 4,
+      "!": 5,
+      "\"": 6,
+      "'": 7,
+      "(": 8,
+      ")": 9,
+      "*": 10,
+      ",": 11,
+      "-": 12,
+      ".": 13,
+      "0": 14,
+      "1": 15,
+      "2": 16,
+      "3": 17,
+      "4": 18,
+      "5": 19,
+      "6": 20,
+      "7": 21,
+      "8": 22,
+      "9": 23,
+      "?": 24,
+      "[": 25,
+      "]": 26,
+      "a": 27,
+      "b": 28,
+      "c": 29,
+      "d": 30,
+      "e": 31,
+      "f": 32,
+      "g": 33,
+      "h": 34,
+      "i": 35,
+      "j": 36,
+      "k": 37,
+      "l": 38,
+      "m": 39,
+      "n": 40,
+      "o": 41,
+      "p": 42,
+      "q": 43,
+      "r": 44,
+      "s": 45,
+      "t": 46,
+      "u": 47,
+      "v": 48,
+      "w": 49,
+      "x": 50,
+      "y": 51,
+      "z": 52,
+      "ma": 53,
+      "lh": 54,
+      "en": 55,
+      "an": 56,
+      "ak": 57,
+      "ek": 58,
+      "ta": 59,
+      "ko": 60,
+      "ke": 61,
+      "ka": 62,
+      "ha": 63,
+      "eng": 64,
+      "mo": 65,
+      "lha": 66,
+      "ie": 67,
+      "ia": 68,
+      "te": 69,
+      "ne": 70,
+      "ng": 71,
+      "ve": 72,
+      "ap": 73,
+      "ai": 74,
+      "na": 75,
+      "nak": 76,
+      "me": 77,
+      "van": 78,
+      "neng": 79,
+      "kel": 80,
+      "mak": 81,
+      "he": 82,
+      "ok": 83,
+      "se": 84,
+      "lhta": 85,
+      "lhe": 86,
+      "va": 87,
+      "to": 88,
+      "ang": 89,
+      "mok": 90,
+      "han": 91,
+      "ho": 92,
+      "men": 93,
+      "po": 94,
+      "la": 95,
+      "kek": 96,
+      "sek": 97,
+      "ngko": 98,
+      "pa": 99,
+      "enneng": 100,
+      "mma": 101,
+      "ves": 102,
+      "kelha": 103,
+      "vak": 104,
+      "vanlha": 105,
+      "nen": 106,
+      "as": 107,
+      "tak": 108,
+      "temak": 109,
+      "tema": 110,
+      "nek": 111,
+      "io": 112,
+      "koka": 113,
+      "heng": 114,
+      "vo": 115,
+      "tamen": 116,
+      "el": 117,
+      "iek": 118,
+      "kok": 119,
+      "iet": 120,
+      "nta": 121,
+      "iam": 122,
+      "netamen": 123,
+      "nan": 124,
+      "mek": 125,
+      "tek": 126,
+      "kan": 127,
+      "al": 128,
+      "es": 129,
+      "mota": 130,
+      "ennengko": 131,
+      "pai": 132,
+      "ama": 133,
+      "et": 134,
+      "kak": 135,
+      "ket": 136,
+      "hai": 137,
+      "iem": 138,
+      "iak": 139,
+      "hek": 140,
+      "kama": 141,
+      "met": 142,
+      "ian": 143,
+      "mamma": 144,
+      "nel": 145,
+      "vesai": 146,
+      "vai": 147,
+      "ken": 148,
+      "iep": 149,
+      "tan": 150,
+      "hak": 151,
+      "lhenneng": 152,
+      "at": 153,
+      "lhennenga": 154,
+      "nema": 155,
+      "pe": 156,
+      "ten": 157,
+      "lo": 158,
+      "hom": 159,
+      "have": 160,
+      "voma": 161,
+      "alh": 162,
+      "ntemak": 163,
+      "niek": 164,
+      "ntase": 165,
+      "lhek": 166,
+      "skama": 167,
+      "malha": 168,
+      "tai": 169,
+      "vek": 170,
+      "alhta": 171,
+      "nhan": 172,
+      "nem": 173,
+      "niekhe": 174,
+      "pkel": 175,
+      "lhma": 176,
+      "ien": 177,
+      "leng": 178,
+      "lhema": 179,
+      "mokhom": 180,
+      "so": 181,
+      "man": 182,
+      "eke": 183,
+      "iang": 184,
+      "ngkot": 185,
+      "neneke": 186,
+      "cu": 187,
+      "nenekev": 188,
+      "lheng": 189,
+      "vetai": 190,
+      "hengka": 191,
+      "lhka": 192,
+      "lhan": 193,
+      "lhet": 194,
+      "oka": 195,
+      "pota": 196,
+      "mel": 197,
+      "niet": 198,
+      "enlhet": 199,
+      "ngkel": 200,
+      "ro": 201,
+      "teng": 202,
+      "enenlhet": 203,
+      "mas": 204,
+      "vane": 205,
+      "paq": 206,
+      "vesa": 207,
+      "temakha": 208,
+      "lhva": 209,
+      "lan": 210,
+      "hata": 211,
+      "iaq": 212,
+      "ngke": 213,
+      "apkel": 214,
+      "escu": 215,
+      "ela": 216,
+      "selha": 217,
+      "lhna": 218,
+      "mangko": 219,
+      "akvesai": 220,
+      "escuela": 221,
+      "vana": 222,
+      "vaneiam": 223,
+      "aq": 224,
+      "lhamak": 225,
+      "le": 226,
+      "no": 227,
+      "nia": 228,
+      "tep": 229,
+      "ntasek": 230,
+      "kanhan": 231,
+      "paivoma": 232,
+      "metka": 233,
+      "sa": 234,
+      "ankek": 235,
+      "kolhva": 236,
+      "makha": 237,
+      "mang": 238,
+      "iemmen": 239,
+      "toma": 240,
+      "pek": 241,
+      "lhamakho": 242,
+      "anio": 243,
+      "sep": 244,
+      "do": 245,
+      "angke": 246,
+      "ra": 247,
+      "lhnak": 248,
+      "qa": 249,
+      "ri": 250,
+      "anak": 251,
+      "valh": 252,
+      "ngkotnek": 253,
+      "nha": 254,
+      "ieiam": 255,
+      "tob": 256,
+      "akha": 257,
+      "kas": 258,
+      "neten": 259,
+      "iav": 260,
+      "am": 261,
+      "iok": 262,
+      "iap": 263,
+      "ham": 264,
+      "veleng": 265,
+      "hen": 266,
+      "ana": 267,
+      "vang": 268,
+      "velengko": 269,
+      "angkok": 270,
+      "nai": 271,
+      "nalhta": 272,
+      "nne": 273,
+      "taq": 274,
+      "temma": 275,
+      "takha": 276,
+      "co": 277,
+      "lho": 278,
+      "temo": 279,
+      "mong": 280,
+      "anga": 281,
+      "valhok": 282,
+      "ias": 283,
+      "sema": 284,
+      "mekama": 285,
+      "kanek": 286,
+      "19": 287,
+      "pen": 288,
+      "iama": 289,
+      "iamet": 290,
+      "ngkelvana": 291,
+      "ltema": 292,
+      "ske": 293,
+      "iavai": 294,
+      "apai": 295,
+      "llo": 296,
+      "lhkek": 297,
+      "ntak": 298,
+      "ketsek": 299,
+      "tanhan": 300,
+      "nietnek": 301,
+      "lhke": 302,
+      "ania": 303,
+      "tava": 304,
+      "nahan": 305,
+      "vakmo": 306,
+      "vaiak": 307,
+      "kolhvave": 308,
+      "nok": 309,
+      "pok": 310,
+      "vok": 311,
+      "mama": 312,
+      "lhen": 313,
+      "aniep": 314,
+      "kom": 315,
+      "makmekama": 316,
+      "pel": 317,
+      "ven": 318,
+      "nentoma": 319,
+      "nekha": 320,
+      "qaselha": 321,
+      "is": 322,
+      "nie": 323,
+      "vet": 324,
+      "kakto": 325,
+      "cas": 326,
+      "eiet": 327,
+      "pan": 328,
+      "keskama": 329,
+      "nalhma": 330,
+      "pop": 331,
+      "kelhaha": 332,
+      "lek": 333,
+      "aktema": 334,
+      "kai": 335,
+      "vakha": 336,
+      "sanga": 337,
+      "kolha": 338,
+      "kesek": 339,
+      "kamok": 340,
+      "nemaltema": 341,
+      "apaivoma": 342,
+      "nlh": 343,
+      "pak": 344,
+      "kap": 345,
+      "iai": 346,
+      "apket": 347,
+      "lhem": 348,
+      "angkek": 349,
+      "anata": 350,
+      "avan": 351,
+      "ntema": 352,
+      "skel": 353,
+      "aknem": 354,
+      "ianka": 355,
+      "toba": 356,
+      "??": 357,
+      "kangke": 358,
+      "nap": 359,
+      "kes": 360,
+      "hel": 361,
+      "lheme": 362,
+      "keng": 363,
+      "mpa": 364,
+      "veng": 365,
+      "kam": 366,
+      "meiak": 367,
+      "tova": 368,
+      "vakmek": 369,
+      "paqme": 370,
+      "nlhoka": 371,
+      "gu": 372,
+      "mis": 373,
+      "iave": 374,
+      "apan": 375,
+      "nengak": 376,
+      "angko": 377,
+      "asma": 378,
+      "iante": 379,
+      "tenna": 380,
+      "misio": 381,
+      "alha": 382,
+      "hok": 383,
+      "aniem": 384,
+      "tama": 385,
+      "moma": 386,
+      "veiak": 387,
+      "est": 388,
+      "ennengkom": 389,
+      "tanha": 390,
+      "lhanhan": 391,
+      "akto": 392,
+      "konne": 393,
+      "ieta": 394,
+      "iavek": 395,
+      "nemakha": 396,
+      "lhepop": 397,
+      "vaiam": 398,
+      "mmalhka": 399,
+      "hengke": 400,
+      "manie": 401,
+      "nlhokala": 402,
+      "akie": 403,
+      "tav": 404,
+      "tata": 405,
+      "tase": 406,
+      "kaha": 407,
+      "mop": 408,
+      "ngkol": 409,
+      "vakho": 410,
+      "takmel": 411,
+      "etnek": 412,
+      "pelha": 413,
+      "iantelhka": 414,
+      "ca": 415,
+      "anhan": 416,
+      "anmen": 417,
+      "meme": 418,
+      "nengvetai": 419,
+      "sekhek": 420,
+      "vakka": 421,
+      "nietne": 422,
+      "iantelhkapa": 423,
+      "amok": 424,
+      "llan": 425,
+      "anek": 426,
+      "apken": 427,
+      "lheiap": 428,
+      "ati": 429,
+      "iavhan": 430,
+      "knem": 431,
+      "meng": 432,
+      "nkek": 433,
+      "zo": 434,
+      "akho": 435,
+      "pong": 436,
+      "sekha": 437,
+      "alhen": 438,
+      "rillo": 439,
+      "iasma": 440,
+      "kvesa": 441,
+      "lhto": 442,
+      "aktemakha": 443,
+      "kelh": 444,
+      "pozo": 445,
+      "lat": 446,
+      "iompa": 447,
+      "hengel": 448,
+      "lonia": 449,
+      "tobati": 450,
+      "paqmeiasma": 451,
+      "ei": 452,
+      "em": 453,
+      "gra": 454,
+      "nke": 455,
+      "nien": 456,
+      "lhelhma": 457,
+      "pas": 458,
+      "amarillo": 459,
+      "tengiai": 460,
+      "iaqha": 461,
+      "nial": 462,
+      "li": 463,
+      "vetak": 464,
+      "apvesai": 465,
+      "naq": 466,
+      "angel": 467,
+      "kanha": 468,
+      "iempek": 469,
+      "peia": 470,
+      "iangkok": 471,
+      "aqtema": 472,
+      "alhaie": 473,
+      "',": 474,
+      "ava": 475,
+      "ema": 476,
+      "elh": 477,
+      "si": 478,
+      "kem": 479,
+      "tor": 480,
+      "llano": 481,
+      "evalhok": 482,
+      "ihengka": 483,
+      "pken": 484,
+      "maest": 485,
+      "hama": 486,
+      "ies": 487,
+      "tellano": 488,
+      "seta": 489,
+      "nelvetai": 490,
+      "misione": 491,
+      "grado": 492,
+      "maestro": 493,
+      "dio": 494,
+      "kvesai": 495,
+      "nte": 496,
+      "pvesa": 497,
+      "svetai": 498,
+      "talh": 499,
+      "talha": 500,
+      "kaq": 501,
+      "iema": 502,
+      "nemo": 503,
+      "ngkanek": 504,
+      "pom": 505,
+      "nempaivoma": 506,
+      "eietkok": 507,
+      "vengka": 508,
+      "nialva": 509,
+      "misionero": 510,
+      "av": 511,
+      "nna": 512,
+      "vhen": 513,
+      "lhtanhan": 514,
+      "antek": 515,
+      "tamo": 516,
+      "koneng": 517,
+      "nep": 518,
+      "nemma": 519,
+      "aikaha": 520,
+      "nengke": 521,
+      "nengiave": 522,
+      "hanet": 523,
+      "maskeng": 524,
+      "vangko": 525,
+      "196": 526,
+      "pelhasep": 527,
+      "00": 528,
+      "ar": 529,
+      "niak": 530,
+      "nian": 531,
+      "pket": 532,
+      "pankek": 533,
+      "ani": 534,
+      "anlheng": 535,
+      "akno": 536,
+      "talhe": 537,
+      "iamo": 538,
+      "telhe": 539,
+      "teves": 540,
+      "telhek": 541,
+      "natemma": 542,
+      "takman": 543,
+      "amai": 544,
+      "kakpo": 545,
+      "ianma": 546,
+      "nelvai": 547,
+      "iepet": 548,
+      "tanc": 549,
+      "lhaniek": 550,
+      "paqvaiam": 551,
+      "colonia": 552,
+      "castellano": 553,
+      "kolhave": 554,
+      "kie": 555,
+      "re": 556,
+      "mahai": 557,
+      "koie": 558,
+      "ngka": 559,
+      "ngkek": 560,
+      "ngken": 561,
+      "ngvengka": 562,
+      "aptava": 563,
+      "laq": 564,
+      "nekma": 565,
+      "vomok": 566,
+      "mekha": 567,
+      "paihek": 568,
+      "kakhai": 569,
+      "ketlheng": 570,
+      "iepho": 571,
+      "iaqte": 572,
+      "de": 573,
+      "evan": 574,
+      "hangkok": 575,
+      "ig": 576,
+      "les": 577,
+      "mpai": 578,
+      "ptak": 579,
+      "sen": 580,
+      "ska": 581,
+      "tr": 582,
+      "lhtanha": 583,
+      "anke": 584,
+      "taiep": 585,
+      "kelhanhan": 586,
+      "hapa": 587,
+      "kelasma": 588,
+      "poma": 589,
+      "sekama": 590,
+      "iempe": 591,
+      "soma": 592,
+      "mangkolat": 593,
+      "taqmel": 594,
+      "avanhek": 595,
+      "veiakmo": 596,
+      "mopvana": 597,
+      "alheno": 598,
+      "ado": 599,
+      "bi": 600,
+      "etek": 601,
+      "qan": 602,
+      "sak": 603,
+      "sama": 604,
+      "svet": 605,
+      "ti": 606,
+      "ua": 607,
+      "maneng": 608,
+      "ano": 609,
+      "anta": 610,
+      "hap": 611,
+      "hat": 612,
+      "lhai": 613,
+      "ielhem": 614,
+      "net": 615,
+      "ngvak": 616,
+      "keliaqha": 617,
+      "makva": 618,
+      "hema": 619,
+      "angen": 620,
+      "angkelha": 621,
+      "mokhe": 622,
+      "veske": 623,
+      "asmakmekama": 624,
+      "estanc": 625,
+      "etanlheng": 626,
+      "neltema": 627,
+      "iepok": 628,
+      "taniek": 629,
+      "loma": 630,
+      "pkelpaqmeiasma": 631,
+      "lhengama": 632,
+      "sav": 633,
+      "1900": 634,
+      "kaktonak": 635,
+      "iaqtepa": 636,
+      "avok": 637,
+      "eta": 638,
+      "kiavai": 639,
+      "let": 640,
+      "pri": 641,
+      "sma": 642,
+      "skek": 643,
+      "lhak": 644,
+      "ankok": 645,
+      "akte": 646,
+      "kaiam": 647,
+      "havok": 648,
+      "aptak": 649,
+      "apio": 650,
+      "aptek": 651,
+      "nakha": 652,
+      "mei": 653,
+      "melh": 654,
+      "vanek": 655,
+      "heian": 656,
+      "seva": 657,
+      "vat": 658,
+      "sekla": 659,
+      "iakme": 660,
+      "iakmek": 661,
+      "hako": 662,
+      "lhekmo": 663,
+      "lengua": 664,
+      "iangkek": 665,
+      "mangkok": 666,
+      "leto": 667,
+      "vaiakmek": 668,
+      "apankok": 669,
+      "nengakheng": 670,
+      "tennama": 671,
+      "in": 672,
+      "ota": 673,
+      "un": 674,
+      "aktek": 675,
+      "tasek": 676,
+      "tape": 677,
+      "kahe": 678,
+      "aptema": 679,
+      "nenga": 680,
+      "sem": 681,
+      "potanha": 682,
+      "aske": 683,
+      "etne": 684,
+      "lomakha": 685,
+      "pkelvaneiam": 686,
+      "ngkotiepok": 687,
+      "maskek": 688,
+      "seppo": 689,
+      "nnelha": 690,
+      "penes": 691,
+      "skema": 692,
+      "eietka": 693,
+      "pongha": 694,
+      "lhtoka": 695,
+      "igles": 696,
+      "estancia": 697,
+      "iglesia": 698,
+      "aie": 699,
+      "ga": 700,
+      "ntek": 701,
+      "om": 702,
+      "or": 703,
+      "pta": 704,
+      "piavai": 705,
+      "sket": 706,
+      "ue": 707,
+      "akiet": 708,
+      "kon": 709,
+      "halhe": 710,
+      "mot": 711,
+      "lhat": 712,
+      "veta": 713,
+      "mes": 714,
+      "memong": 715,
+      "vaneng": 716,
+      "kellan": 717,
+      "het": 718,
+      "seihengka": 719,
+      "sevhen": 720,
+      "lagu": 721,
+      "ngkolhek": 722,
+      "pat": 723,
+      "mmap": 724,
+      "paise": 725,
+      "pelh": 726,
+      "alhkaiam": 727,
+      "pkelvesa": 728,
+      "ienaq": 729,
+      "maske": 730,
+      "apkelvaneiam": 731,
+      "iemmenek": 732,
+      "pekhai": 733,
+      "valho": 734,
+      "kaskek": 735,
+      "iokha": 736,
+      "iokho": 737,
+      "naikama": 738,
+      "pelten": 739,
+      "nemmaskema": 740,
+      "nianema": 741,
+      "talheskama": 742,
+      "kieto": 743,
+      "nekmaskama": 744,
+      "mangkolatsema": 745,
+      "bib": 746,
+      "keliaqhava": 747,
+      "laguna": 748,
+      "aha": 749,
+      "aho": 750,
+      "gr": 751,
+      "hang": 752,
+      "ieng": 753,
+      "kangkek": 754,
+      "lai": 755,
+      "nt": 756,
+      "pro": 757,
+      "qalh": 758,
+      "ste": 759,
+      "ul": 760,
+      "ya": 761,
+      "mal": 762,
+      "antak": 763,
+      "engel": 764,
+      "engiak": 765,
+      "ielhva": 766,
+      "iaiet": 767,
+      "teso": 768,
+      "nelha": 769,
+      "neia": 770,
+      "nemok": 771,
+      "ngvakmek": 772,
+      "aptemak": 773,
+      "apvaneiam": 774,
+      "apiemmenek": 775,
+      "meiek": 776,
+      "nengkek": 777,
+      "kelvaneiam": 778,
+      "hei": 779,
+      "helha": 780,
+      "tomakha": 781,
+      "ion": 782,
+      "ietek": 783,
+      "alvaneiam": 784,
+      "paihak": 785,
+      "ketse": 786,
+      "iakmo": 787,
+      "ianlha": 788,
+      "lhankok": 789,
+      "aqtek": 790,
+      "tepak": 791,
+      "dos": 792,
+      "vaiakmok": 793,
+      "niehe": 794,
+      "apketkok": 795,
+      "avanhe": 796,
+      "meiakha": 797,
+      "mision": 798,
+      "akieto": 799,
+      "avhak": 800,
+      "nnavek": 801,
+      "tres": 802,
+      "qanet": 803,
+      "iokhalhma": 804,
+      "nianemana": 805,
+      "bibli": 806,
+      "amo": 807,
+      "ame": 808,
+      "ban": 809,
+      "cen": 810,
+      "fa": 811,
+      "ikama": 812,
+      "kto": 813,
+      "ltemo": 814,
+      "mu": 815,
+      "ptemak": 816,
+      "san": 817,
+      "stema": 818,
+      "sken": 819,
+      "upo": 820,
+      "udio": 821,
+      "malhek": 822,
+      "lhko": 823,
+      "anlha": 824,
+      "akvesa": 825,
+      "keiet": 826,
+      "kamo": 827,
+      "halhema": 828,
+      "iapom": 829,
+      "nelh": 830,
+      "vetek": 831,
+      "apka": 832,
+      "apva": 833,
+      "apieiam": 834,
+      "aikamok": 835,
+      "hetav": 836,
+      "hoie": 837,
+      "pora": 838,
+      "sekhe": 839,
+      "ngkom": 840,
+      "vaktamo": 841,
+      "askel": 842,
+      "vom": 843,
+      "iekpel": 844,
+      "etsep": 845,
+      "ketko": 846,
+      "metkelha": 847,
+      "kenek": 848,
+      "atko": 849,
+      "lengie": 850,
+      "iangko": 851,
+      "lhanie": 852,
+      "tengia": 853,
+      "masma": 854,
+      "lelha": 855,
+      "tepkek": 856,
+      "semana": 857,
+      "venaq": 858,
+      "casani": 859,
+      "estudio": 860,
+      "akielhna": 861,
+      "takmelakho": 862,
+      "vakkahak": 863,
+      "ketlhengkap": 864,
+      "samaneia": 865,
+      "sevalaq": 866,
+      "grupo": 867,
+      "ielhvasema": 868,
+      "banco": 869,
+      "casanillo": 870,
+      "cho": 871,
+      "di": 872,
+      "emo": 873,
+      "eman": 874,
+      "fes": 875,
+      "lia": 876,
+      "lio": 877,
+      "nnek": 878,
+      "noka": 879,
+      "on": 880,
+      "onhan": 881,
+      "snema": 882,
+      "skeng": 883,
+      "vap": 884,
+      "malh": 885,
+      "masoma": 886,
+      "halh": 887,
+      "telha": 888,
+      "teiap": 889,
+      "apie": 890,
+      "aptoma": 891,
+      "appok": 892,
+      "metek": 893,
+      "kella": 894,
+      "kelpaqmeiasma": 895,
+      "kelpaqvaiam": 896,
+      "hem": 897,
+      "selhanhan": 898,
+      "lhtam": 899,
+      "moklhem": 900,
+      "menasma": 901,
+      "kelham": 902,
+      "vakme": 903,
+      "vakhak": 904,
+      "vomo": 905,
+      "alan": 906,
+      "kakhama": 907,
+      "songkek": 908,
+      "lhenga": 909,
+      "maska": 910,
+      "iaqiema": 911,
+      "kaske": 912,
+      "vangkok": 913,
+      "lhong": 914,
+      "vaiakmo": 915,
+      "lhenek": 916,
+      "venaqtema": 917,
+      "vetang": 918,
+      "casado": 919,
+      "???": 920,
+      "napa": 921,
+      "nientelhe": 922,
+      "elhnemok": 923,
+      "talhnema": 924,
+      "neptamen": 925,
+      "paihekha": 926,
+      "taiepe": 927,
+      "lhaivoma": 928,
+      "prime": 929,
+      "vatio": 930,
+      "profes": 931,
+      "profesor": 932,
+      "14": 933,
+      "62": 934,
+      "alhe": 935,
+      "ala": 936,
+      "bri": 937,
+      "ce": 938,
+      "epai": 939,
+      "ita": 940,
+      "jo": 941,
+      "ktemo": 942,
+      "len": 943,
+      "mm": 944,
+      "nang": 945,
+      "nlhaniek": 946,
+      "pvan": 947,
+      "pla": 948,
+      "pkak": 949,
+      "pkem": 950,
+      "sta": 951,
+      "sok": 952,
+      "spaivoma": 953,
+      "svanek": 954,
+      "tkok": 955,
+      "anma": 956,
+      "akhe": 957,
+      "tamak": 958,
+      "kolh": 959,
+      "kola": 960,
+      "moi": 961,
+      "moto": 962,
+      "mongke": 963,
+      "iapa": 964,
+      "iamasma": 965,
+      "ngkak": 966,
+      "ngvai": 967,
+      "ngkai": 968,
+      "apen": 969,
+      "apte": 970,
+      "apvalhok": 971,
+      "apnemakha": 972,
+      "apetek": 973,
+      "apveske": 974,
+      "aikama": 975,
+      "nakte": 976,
+      "nengel": 977,
+      "kelie": 978,
+      "keliang": 979,
+      "lhep": 980,
+      "vaskama": 981,
+      "menia": 982,
+      "para": 983,
+      "mmaskeng": 984,
+      "nentek": 985,
+      "nennema": 986,
+      "nenlhengama": 987,
+      "asa": 988,
+      "aso": 989,
+      "nankok": 990,
+      "kanma": 991,
+      "aliem": 992,
+      "aleman": 993,
+      "ketkeiet": 994,
+      "atkok": 995,
+      "nemat": 996,
+      "niekhem": 997,
+      "lengai": 998,
+      "lhengke": 999
+    },
+    "merges": [
+      [
+        "m",
+        "a"
+      ],
+      [
+        "l",
+        "h"
+      ],
+      [
+        "e",
+        "n"
+      ],
+      [
+        "a",
+        "n"
+      ],
+      [
+        "a",
+        "k"
+      ],
+      [
+        "e",
+        "k"
+      ],
+      [
+        "t",
+        "a"
+      ],
+      [
+        "k",
+        "o"
+      ],
+      [
+        "k",
+        "e"
+      ],
+      [
+        "k",
+        "a"
+      ],
+      [
+        "h",
+        "a"
+      ],
+      [
+        "en",
+        "g"
+      ],
+      [
+        "m",
+        "o"
+      ],
+      [
+        "lh",
+        "a"
+      ],
+      [
+        "i",
+        "e"
+      ],
+      [
+        "i",
+        "a"
+      ],
+      [
+        "t",
+        "e"
+      ],
+      [
+        "n",
+        "e"
+      ],
+      [
+        "n",
+        "g"
+      ],
+      [
+        "v",
+        "e"
+      ],
+      [
+        "a",
+        "p"
+      ],
+      [
+        "a",
+        "i"
+      ],
+      [
+        "n",
+        "a"
+      ],
+      [
+        "n",
+        "ak"
+      ],
+      [
+        "m",
+        "e"
+      ],
+      [
+        "v",
+        "an"
+      ],
+      [
+        "n",
+        "eng"
+      ],
+      [
+        "ke",
+        "l"
+      ],
+      [
+        "ma",
+        "k"
+      ],
+      [
+        "h",
+        "e"
+      ],
+      [
+        "o",
+        "k"
+      ],
+      [
+        "s",
+        "e"
+      ],
+      [
+        "lh",
+        "ta"
+      ],
+      [
+        "lh",
+        "e"
+      ],
+      [
+        "v",
+        "a"
+      ],
+      [
+        "t",
+        "o"
+      ],
+      [
+        "an",
+        "g"
+      ],
+      [
+        "mo",
+        "k"
+      ],
+      [
+        "h",
+        "an"
+      ],
+      [
+        "h",
+        "o"
+      ],
+      [
+        "m",
+        "en"
+      ],
+      [
+        "p",
+        "o"
+      ],
+      [
+        "l",
+        "a"
+      ],
+      [
+        "k",
+        "ek"
+      ],
+      [
+        "s",
+        "ek"
+      ],
+      [
+        "ng",
+        "ko"
+      ],
+      [
+        "p",
+        "a"
+      ],
+      [
+        "en",
+        "neng"
+      ],
+      [
+        "m",
+        "ma"
+      ],
+      [
+        "ve",
+        "s"
+      ],
+      [
+        "ke",
+        "lha"
+      ],
+      [
+        "v",
+        "ak"
+      ],
+      [
+        "van",
+        "lha"
+      ],
+      [
+        "n",
+        "en"
+      ],
+      [
+        "a",
+        "s"
+      ],
+      [
+        "t",
+        "ak"
+      ],
+      [
+        "te",
+        "mak"
+      ],
+      [
+        "te",
+        "ma"
+      ],
+      [
+        "n",
+        "ek"
+      ],
+      [
+        "i",
+        "o"
+      ],
+      [
+        "ko",
+        "ka"
+      ],
+      [
+        "h",
+        "eng"
+      ],
+      [
+        "v",
+        "o"
+      ],
+      [
+        "ta",
+        "men"
+      ],
+      [
+        "e",
+        "l"
+      ],
+      [
+        "i",
+        "ek"
+      ],
+      [
+        "ko",
+        "k"
+      ],
+      [
+        "ie",
+        "t"
+      ],
+      [
+        "n",
+        "ta"
+      ],
+      [
+        "ia",
+        "m"
+      ],
+      [
+        "ne",
+        "tamen"
+      ],
+      [
+        "n",
+        "an"
+      ],
+      [
+        "m",
+        "ek"
+      ],
+      [
+        "t",
+        "ek"
+      ],
+      [
+        "k",
+        "an"
+      ],
+      [
+        "a",
+        "l"
+      ],
+      [
+        "e",
+        "s"
+      ],
+      [
+        "mo",
+        "ta"
+      ],
+      [
+        "enneng",
+        "ko"
+      ],
+      [
+        "p",
+        "ai"
+      ],
+      [
+        "a",
+        "ma"
+      ],
+      [
+        "e",
+        "t"
+      ],
+      [
+        "k",
+        "ak"
+      ],
+      [
+        "ke",
+        "t"
+      ],
+      [
+        "ha",
+        "i"
+      ],
+      [
+        "ie",
+        "m"
+      ],
+      [
+        "i",
+        "ak"
+      ],
+      [
+        "h",
+        "ek"
+      ],
+      [
+        "ka",
+        "ma"
+      ],
+      [
+        "me",
+        "t"
+      ],
+      [
+        "i",
+        "an"
+      ],
+      [
+        "ma",
+        "mma"
+      ],
+      [
+        "ne",
+        "l"
+      ],
+      [
+        "ves",
+        "ai"
+      ],
+      [
+        "v",
+        "ai"
+      ],
+      [
+        "k",
+        "en"
+      ],
+      [
+        "ie",
+        "p"
+      ],
+      [
+        "t",
+        "an"
+      ],
+      [
+        "h",
+        "ak"
+      ],
+      [
+        "lh",
+        "enneng"
+      ],
+      [
+        "a",
+        "t"
+      ],
+      [
+        "lhenneng",
+        "a"
+      ],
+      [
+        "ne",
+        "ma"
+      ],
+      [
+        "p",
+        "e"
+      ],
+      [
+        "t",
+        "en"
+      ],
+      [
+        "l",
+        "o"
+      ],
+      [
+        "ho",
+        "m"
+      ],
+      [
+        "ha",
+        "ve"
+      ],
+      [
+        "vo",
+        "ma"
+      ],
+      [
+        "a",
+        "lh"
+      ],
+      [
+        "n",
+        "temak"
+      ],
+      [
+        "n",
+        "iek"
+      ],
+      [
+        "nta",
+        "se"
+      ],
+      [
+        "lh",
+        "ek"
+      ],
+      [
+        "s",
+        "kama"
+      ],
+      [
+        "ma",
+        "lha"
+      ],
+      [
+        "ta",
+        "i"
+      ],
+      [
+        "v",
+        "ek"
+      ],
+      [
+        "a",
+        "lhta"
+      ],
+      [
+        "n",
+        "han"
+      ],
+      [
+        "ne",
+        "m"
+      ],
+      [
+        "niek",
+        "he"
+      ],
+      [
+        "p",
+        "kel"
+      ],
+      [
+        "lh",
+        "ma"
+      ],
+      [
+        "i",
+        "en"
+      ],
+      [
+        "l",
+        "eng"
+      ],
+      [
+        "lhe",
+        "ma"
+      ],
+      [
+        "mok",
+        "hom"
+      ],
+      [
+        "s",
+        "o"
+      ],
+      [
+        "ma",
+        "n"
+      ],
+      [
+        "ek",
+        "e"
+      ],
+      [
+        "i",
+        "ang"
+      ],
+      [
+        "ngko",
+        "t"
+      ],
+      [
+        "nen",
+        "eke"
+      ],
+      [
+        "c",
+        "u"
+      ],
+      [
+        "neneke",
+        "v"
+      ],
+      [
+        "lh",
+        "eng"
+      ],
+      [
+        "ve",
+        "tai"
+      ],
+      [
+        "heng",
+        "ka"
+      ],
+      [
+        "lh",
+        "ka"
+      ],
+      [
+        "lh",
+        "an"
+      ],
+      [
+        "lhe",
+        "t"
+      ],
+      [
+        "o",
+        "ka"
+      ],
+      [
+        "po",
+        "ta"
+      ],
+      [
+        "me",
+        "l"
+      ],
+      [
+        "n",
+        "iet"
+      ],
+      [
+        "en",
+        "lhet"
+      ],
+      [
+        "ng",
+        "kel"
+      ],
+      [
+        "r",
+        "o"
+      ],
+      [
+        "t",
+        "eng"
+      ],
+      [
+        "en",
+        "enlhet"
+      ],
+      [
+        "ma",
+        "s"
+      ],
+      [
+        "van",
+        "e"
+      ],
+      [
+        "pa",
+        "q"
+      ],
+      [
+        "ves",
+        "a"
+      ],
+      [
+        "temak",
+        "ha"
+      ],
+      [
+        "lh",
+        "va"
+      ],
+      [
+        "l",
+        "an"
+      ],
+      [
+        "ha",
+        "ta"
+      ],
+      [
+        "ia",
+        "q"
+      ],
+      [
+        "ng",
+        "ke"
+      ],
+      [
+        "ap",
+        "kel"
+      ],
+      [
+        "es",
+        "cu"
+      ],
+      [
+        "e",
+        "la"
+      ],
+      [
+        "se",
+        "lha"
+      ],
+      [
+        "lh",
+        "na"
+      ],
+      [
+        "ma",
+        "ngko"
+      ],
+      [
+        "ak",
+        "vesai"
+      ],
+      [
+        "escu",
+        "ela"
+      ],
+      [
+        "van",
+        "a"
+      ],
+      [
+        "vane",
+        "iam"
+      ],
+      [
+        "a",
+        "q"
+      ],
+      [
+        "lha",
+        "mak"
+      ],
+      [
+        "l",
+        "e"
+      ],
+      [
+        "n",
+        "o"
+      ],
+      [
+        "n",
+        "ia"
+      ],
+      [
+        "te",
+        "p"
+      ],
+      [
+        "nta",
+        "sek"
+      ],
+      [
+        "kan",
+        "han"
+      ],
+      [
+        "pai",
+        "voma"
+      ],
+      [
+        "met",
+        "ka"
+      ],
+      [
+        "s",
+        "a"
+      ],
+      [
+        "an",
+        "kek"
+      ],
+      [
+        "ko",
+        "lhva"
+      ],
+      [
+        "mak",
+        "ha"
+      ],
+      [
+        "ma",
+        "ng"
+      ],
+      [
+        "iem",
+        "men"
+      ],
+      [
+        "to",
+        "ma"
+      ],
+      [
+        "p",
+        "ek"
+      ],
+      [
+        "lhamak",
+        "ho"
+      ],
+      [
+        "an",
+        "io"
+      ],
+      [
+        "se",
+        "p"
+      ],
+      [
+        "d",
+        "o"
+      ],
+      [
+        "ang",
+        "ke"
+      ],
+      [
+        "r",
+        "a"
+      ],
+      [
+        "lh",
+        "nak"
+      ],
+      [
+        "q",
+        "a"
+      ],
+      [
+        "r",
+        "i"
+      ],
+      [
+        "an",
+        "ak"
+      ],
+      [
+        "va",
+        "lh"
+      ],
+      [
+        "ngkot",
+        "nek"
+      ],
+      [
+        "n",
+        "ha"
+      ],
+      [
+        "ie",
+        "iam"
+      ],
+      [
+        "to",
+        "b"
+      ],
+      [
+        "ak",
+        "ha"
+      ],
+      [
+        "ka",
+        "s"
+      ],
+      [
+        "ne",
+        "ten"
+      ],
+      [
+        "ia",
+        "v"
+      ],
+      [
+        "a",
+        "m"
+      ],
+      [
+        "i",
+        "ok"
+      ],
+      [
+        "ia",
+        "p"
+      ],
+      [
+        "ha",
+        "m"
+      ],
+      [
+        "ve",
+        "leng"
+      ],
+      [
+        "h",
+        "en"
+      ],
+      [
+        "an",
+        "a"
+      ],
+      [
+        "van",
+        "g"
+      ],
+      [
+        "veleng",
+        "ko"
+      ],
+      [
+        "ang",
+        "kok"
+      ],
+      [
+        "n",
+        "ai"
+      ],
+      [
+        "na",
+        "lhta"
+      ],
+      [
+        "n",
+        "ne"
+      ],
+      [
+        "ta",
+        "q"
+      ],
+      [
+        "te",
+        "mma"
+      ],
+      [
+        "tak",
+        "ha"
+      ],
+      [
+        "c",
+        "o"
+      ],
+      [
+        "lh",
+        "o"
+      ],
+      [
+        "te",
+        "mo"
+      ],
+      [
+        "mo",
+        "ng"
+      ],
+      [
+        "ang",
+        "a"
+      ],
+      [
+        "valh",
+        "ok"
+      ],
+      [
+        "ia",
+        "s"
+      ],
+      [
+        "se",
+        "ma"
+      ],
+      [
+        "mek",
+        "ama"
+      ],
+      [
+        "kan",
+        "ek"
+      ],
+      [
+        "1",
+        "9"
+      ],
+      [
+        "p",
+        "en"
+      ],
+      [
+        "ia",
+        "ma"
+      ],
+      [
+        "ia",
+        "met"
+      ],
+      [
+        "ngkel",
+        "vana"
+      ],
+      [
+        "l",
+        "tema"
+      ],
+      [
+        "s",
+        "ke"
+      ],
+      [
+        "ia",
+        "vai"
+      ],
+      [
+        "ap",
+        "ai"
+      ],
+      [
+        "l",
+        "lo"
+      ],
+      [
+        "lh",
+        "kek"
+      ],
+      [
+        "n",
+        "tak"
+      ],
+      [
+        "ket",
+        "sek"
+      ],
+      [
+        "tan",
+        "han"
+      ],
+      [
+        "niet",
+        "nek"
+      ],
+      [
+        "lh",
+        "ke"
+      ],
+      [
+        "an",
+        "ia"
+      ],
+      [
+        "ta",
+        "va"
+      ],
+      [
+        "na",
+        "han"
+      ],
+      [
+        "vak",
+        "mo"
+      ],
+      [
+        "vai",
+        "ak"
+      ],
+      [
+        "kolhva",
+        "ve"
+      ],
+      [
+        "n",
+        "ok"
+      ],
+      [
+        "p",
+        "ok"
+      ],
+      [
+        "v",
+        "ok"
+      ],
+      [
+        "ma",
+        "ma"
+      ],
+      [
+        "lh",
+        "en"
+      ],
+      [
+        "an",
+        "iep"
+      ],
+      [
+        "ko",
+        "m"
+      ],
+      [
+        "mak",
+        "mekama"
+      ],
+      [
+        "p",
+        "el"
+      ],
+      [
+        "v",
+        "en"
+      ],
+      [
+        "nen",
+        "toma"
+      ],
+      [
+        "nek",
+        "ha"
+      ],
+      [
+        "qa",
+        "selha"
+      ],
+      [
+        "i",
+        "s"
+      ],
+      [
+        "n",
+        "ie"
+      ],
+      [
+        "ve",
+        "t"
+      ],
+      [
+        "kak",
+        "to"
+      ],
+      [
+        "c",
+        "as"
+      ],
+      [
+        "e",
+        "iet"
+      ],
+      [
+        "p",
+        "an"
+      ],
+      [
+        "ke",
+        "skama"
+      ],
+      [
+        "na",
+        "lhma"
+      ],
+      [
+        "po",
+        "p"
+      ],
+      [
+        "kelha",
+        "ha"
+      ],
+      [
+        "l",
+        "ek"
+      ],
+      [
+        "ak",
+        "tema"
+      ],
+      [
+        "ka",
+        "i"
+      ],
+      [
+        "vak",
+        "ha"
+      ],
+      [
+        "s",
+        "anga"
+      ],
+      [
+        "ko",
+        "lha"
+      ],
+      [
+        "ke",
+        "sek"
+      ],
+      [
+        "ka",
+        "mok"
+      ],
+      [
+        "nema",
+        "ltema"
+      ],
+      [
+        "apai",
+        "voma"
+      ],
+      [
+        "n",
+        "lh"
+      ],
+      [
+        "p",
+        "ak"
+      ],
+      [
+        "ka",
+        "p"
+      ],
+      [
+        "ia",
+        "i"
+      ],
+      [
+        "ap",
+        "ket"
+      ],
+      [
+        "lhe",
+        "m"
+      ],
+      [
+        "ang",
+        "kek"
+      ],
+      [
+        "ana",
+        "ta"
+      ],
+      [
+        "a",
+        "van"
+      ],
+      [
+        "n",
+        "tema"
+      ],
+      [
+        "s",
+        "kel"
+      ],
+      [
+        "ak",
+        "nem"
+      ],
+      [
+        "ian",
+        "ka"
+      ],
+      [
+        "tob",
+        "a"
+      ],
+      [
+        "?",
+        "?"
+      ],
+      [
+        "k",
+        "angke"
+      ],
+      [
+        "n",
+        "ap"
+      ],
+      [
+        "ke",
+        "s"
+      ],
+      [
+        "he",
+        "l"
+      ],
+      [
+        "lhe",
+        "me"
+      ],
+      [
+        "k",
+        "eng"
+      ],
+      [
+        "m",
+        "pa"
+      ],
+      [
+        "v",
+        "eng"
+      ],
+      [
+        "ka",
+        "m"
+      ],
+      [
+        "me",
+        "iak"
+      ],
+      [
+        "to",
+        "va"
+      ],
+      [
+        "vak",
+        "mek"
+      ],
+      [
+        "paq",
+        "me"
+      ],
+      [
+        "nlh",
+        "oka"
+      ],
+      [
+        "g",
+        "u"
+      ],
+      [
+        "m",
+        "is"
+      ],
+      [
+        "ia",
+        "ve"
+      ],
+      [
+        "ap",
+        "an"
+      ],
+      [
+        "neng",
+        "ak"
+      ],
+      [
+        "ang",
+        "ko"
+      ],
+      [
+        "as",
+        "ma"
+      ],
+      [
+        "ian",
+        "te"
+      ],
+      [
+        "ten",
+        "na"
+      ],
+      [
+        "mis",
+        "io"
+      ],
+      [
+        "a",
+        "lha"
+      ],
+      [
+        "h",
+        "ok"
+      ],
+      [
+        "an",
+        "iem"
+      ],
+      [
+        "ta",
+        "ma"
+      ],
+      [
+        "mo",
+        "ma"
+      ],
+      [
+        "ve",
+        "iak"
+      ],
+      [
+        "es",
+        "t"
+      ],
+      [
+        "ennengko",
+        "m"
+      ],
+      [
+        "tan",
+        "ha"
+      ],
+      [
+        "lhan",
+        "han"
+      ],
+      [
+        "ak",
+        "to"
+      ],
+      [
+        "ko",
+        "nne"
+      ],
+      [
+        "ie",
+        "ta"
+      ],
+      [
+        "ia",
+        "vek"
+      ],
+      [
+        "ne",
+        "makha"
+      ],
+      [
+        "lhe",
+        "pop"
+      ],
+      [
+        "va",
+        "iam"
+      ],
+      [
+        "mma",
+        "lhka"
+      ],
+      [
+        "heng",
+        "ke"
+      ],
+      [
+        "man",
+        "ie"
+      ],
+      [
+        "nlhoka",
+        "la"
+      ],
+      [
+        "ak",
+        "ie"
+      ],
+      [
+        "ta",
+        "v"
+      ],
+      [
+        "ta",
+        "ta"
+      ],
+      [
+        "ta",
+        "se"
+      ],
+      [
+        "ka",
+        "ha"
+      ],
+      [
+        "mo",
+        "p"
+      ],
+      [
+        "ngko",
+        "l"
+      ],
+      [
+        "vak",
+        "ho"
+      ],
+      [
+        "tak",
+        "mel"
+      ],
+      [
+        "et",
+        "nek"
+      ],
+      [
+        "pe",
+        "lha"
+      ],
+      [
+        "iante",
+        "lhka"
+      ],
+      [
+        "c",
+        "a"
+      ],
+      [
+        "an",
+        "han"
+      ],
+      [
+        "an",
+        "men"
+      ],
+      [
+        "me",
+        "me"
+      ],
+      [
+        "neng",
+        "vetai"
+      ],
+      [
+        "sek",
+        "hek"
+      ],
+      [
+        "vak",
+        "ka"
+      ],
+      [
+        "niet",
+        "ne"
+      ],
+      [
+        "iantelhka",
+        "pa"
+      ],
+      [
+        "a",
+        "mok"
+      ],
+      [
+        "l",
+        "lan"
+      ],
+      [
+        "an",
+        "ek"
+      ],
+      [
+        "ap",
+        "ken"
+      ],
+      [
+        "lhe",
+        "iap"
+      ],
+      [
+        "at",
+        "i"
+      ],
+      [
+        "iav",
+        "han"
+      ],
+      [
+        "k",
+        "nem"
+      ],
+      [
+        "m",
+        "eng"
+      ],
+      [
+        "n",
+        "kek"
+      ],
+      [
+        "z",
+        "o"
+      ],
+      [
+        "ak",
+        "ho"
+      ],
+      [
+        "po",
+        "ng"
+      ],
+      [
+        "sek",
+        "ha"
+      ],
+      [
+        "alh",
+        "en"
+      ],
+      [
+        "ri",
+        "llo"
+      ],
+      [
+        "ias",
+        "ma"
+      ],
+      [
+        "k",
+        "vesa"
+      ],
+      [
+        "lh",
+        "to"
+      ],
+      [
+        "ak",
+        "temakha"
+      ],
+      [
+        "ke",
+        "lh"
+      ],
+      [
+        "po",
+        "zo"
+      ],
+      [
+        "la",
+        "t"
+      ],
+      [
+        "io",
+        "mpa"
+      ],
+      [
+        "heng",
+        "el"
+      ],
+      [
+        "lo",
+        "nia"
+      ],
+      [
+        "tob",
+        "ati"
+      ],
+      [
+        "paqme",
+        "iasma"
+      ],
+      [
+        "e",
+        "i"
+      ],
+      [
+        "e",
+        "m"
+      ],
+      [
+        "g",
+        "ra"
+      ],
+      [
+        "n",
+        "ke"
+      ],
+      [
+        "n",
+        "ien"
+      ],
+      [
+        "lhe",
+        "lhma"
+      ],
+      [
+        "pa",
+        "s"
+      ],
+      [
+        "ama",
+        "rillo"
+      ],
+      [
+        "teng",
+        "iai"
+      ],
+      [
+        "iaq",
+        "ha"
+      ],
+      [
+        "nia",
+        "l"
+      ],
+      [
+        "l",
+        "i"
+      ],
+      [
+        "ve",
+        "tak"
+      ],
+      [
+        "ap",
+        "vesai"
+      ],
+      [
+        "na",
+        "q"
+      ],
+      [
+        "ang",
+        "el"
+      ],
+      [
+        "kan",
+        "ha"
+      ],
+      [
+        "iem",
+        "pek"
+      ],
+      [
+        "pe",
+        "ia"
+      ],
+      [
+        "iang",
+        "kok"
+      ],
+      [
+        "aq",
+        "tema"
+      ],
+      [
+        "alha",
+        "ie"
+      ],
+      [
+        "'",
+        ","
+      ],
+      [
+        "a",
+        "va"
+      ],
+      [
+        "e",
+        "ma"
+      ],
+      [
+        "e",
+        "lh"
+      ],
+      [
+        "s",
+        "i"
+      ],
+      [
+        "ke",
+        "m"
+      ],
+      [
+        "to",
+        "r"
+      ],
+      [
+        "llan",
+        "o"
+      ],
+      [
+        "e",
+        "valhok"
+      ],
+      [
+        "i",
+        "hengka"
+      ],
+      [
+        "p",
+        "ken"
+      ],
+      [
+        "ma",
+        "est"
+      ],
+      [
+        "ha",
+        "ma"
+      ],
+      [
+        "ie",
+        "s"
+      ],
+      [
+        "te",
+        "llano"
+      ],
+      [
+        "se",
+        "ta"
+      ],
+      [
+        "nel",
+        "vetai"
+      ],
+      [
+        "misio",
+        "ne"
+      ],
+      [
+        "gra",
+        "do"
+      ],
+      [
+        "maest",
+        "ro"
+      ],
+      [
+        "d",
+        "io"
+      ],
+      [
+        "k",
+        "vesai"
+      ],
+      [
+        "n",
+        "te"
+      ],
+      [
+        "p",
+        "vesa"
+      ],
+      [
+        "s",
+        "vetai"
+      ],
+      [
+        "ta",
+        "lh"
+      ],
+      [
+        "ta",
+        "lha"
+      ],
+      [
+        "ka",
+        "q"
+      ],
+      [
+        "ie",
+        "ma"
+      ],
+      [
+        "ne",
+        "mo"
+      ],
+      [
+        "ng",
+        "kanek"
+      ],
+      [
+        "po",
+        "m"
+      ],
+      [
+        "nem",
+        "paivoma"
+      ],
+      [
+        "eiet",
+        "kok"
+      ],
+      [
+        "veng",
+        "ka"
+      ],
+      [
+        "nial",
+        "va"
+      ],
+      [
+        "misione",
+        "ro"
+      ],
+      [
+        "a",
+        "v"
+      ],
+      [
+        "n",
+        "na"
+      ],
+      [
+        "v",
+        "hen"
+      ],
+      [
+        "lh",
+        "tanhan"
+      ],
+      [
+        "an",
+        "tek"
+      ],
+      [
+        "ta",
+        "mo"
+      ],
+      [
+        "ko",
+        "neng"
+      ],
+      [
+        "ne",
+        "p"
+      ],
+      [
+        "ne",
+        "mma"
+      ],
+      [
+        "ai",
+        "kaha"
+      ],
+      [
+        "neng",
+        "ke"
+      ],
+      [
+        "neng",
+        "iave"
+      ],
+      [
+        "han",
+        "et"
+      ],
+      [
+        "mas",
+        "keng"
+      ],
+      [
+        "vang",
+        "ko"
+      ],
+      [
+        "19",
+        "6"
+      ],
+      [
+        "pelha",
+        "sep"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "a",
+        "r"
+      ],
+      [
+        "n",
+        "iak"
+      ],
+      [
+        "n",
+        "ian"
+      ],
+      [
+        "p",
+        "ket"
+      ],
+      [
+        "p",
+        "ankek"
+      ],
+      [
+        "an",
+        "i"
+      ],
+      [
+        "an",
+        "lheng"
+      ],
+      [
+        "ak",
+        "no"
+      ],
+      [
+        "ta",
+        "lhe"
+      ],
+      [
+        "ia",
+        "mo"
+      ],
+      [
+        "te",
+        "lhe"
+      ],
+      [
+        "te",
+        "ves"
+      ],
+      [
+        "te",
+        "lhek"
+      ],
+      [
+        "na",
+        "temma"
+      ],
+      [
+        "tak",
+        "man"
+      ],
+      [
+        "ama",
+        "i"
+      ],
+      [
+        "kak",
+        "po"
+      ],
+      [
+        "ian",
+        "ma"
+      ],
+      [
+        "nel",
+        "vai"
+      ],
+      [
+        "iep",
+        "et"
+      ],
+      [
+        "tan",
+        "c"
+      ],
+      [
+        "lhan",
+        "iek"
+      ],
+      [
+        "paq",
+        "vaiam"
+      ],
+      [
+        "co",
+        "lonia"
+      ],
+      [
+        "cas",
+        "tellano"
+      ],
+      [
+        "kolha",
+        "ve"
+      ],
+      [
+        "k",
+        "ie"
+      ],
+      [
+        "r",
+        "e"
+      ],
+      [
+        "ma",
+        "hai"
+      ],
+      [
+        "ko",
+        "ie"
+      ],
+      [
+        "ng",
+        "ka"
+      ],
+      [
+        "ng",
+        "kek"
+      ],
+      [
+        "ng",
+        "ken"
+      ],
+      [
+        "ng",
+        "vengka"
+      ],
+      [
+        "ap",
+        "tava"
+      ],
+      [
+        "la",
+        "q"
+      ],
+      [
+        "nek",
+        "ma"
+      ],
+      [
+        "vo",
+        "mok"
+      ],
+      [
+        "mek",
+        "ha"
+      ],
+      [
+        "pai",
+        "hek"
+      ],
+      [
+        "kak",
+        "hai"
+      ],
+      [
+        "ket",
+        "lheng"
+      ],
+      [
+        "iep",
+        "ho"
+      ],
+      [
+        "iaq",
+        "te"
+      ],
+      [
+        "d",
+        "e"
+      ],
+      [
+        "e",
+        "van"
+      ],
+      [
+        "h",
+        "angkok"
+      ],
+      [
+        "i",
+        "g"
+      ],
+      [
+        "l",
+        "es"
+      ],
+      [
+        "m",
+        "pai"
+      ],
+      [
+        "p",
+        "tak"
+      ],
+      [
+        "s",
+        "en"
+      ],
+      [
+        "s",
+        "ka"
+      ],
+      [
+        "t",
+        "r"
+      ],
+      [
+        "lh",
+        "tanha"
+      ],
+      [
+        "an",
+        "ke"
+      ],
+      [
+        "ta",
+        "iep"
+      ],
+      [
+        "ke",
+        "lhanhan"
+      ],
+      [
+        "ha",
+        "pa"
+      ],
+      [
+        "kel",
+        "asma"
+      ],
+      [
+        "po",
+        "ma"
+      ],
+      [
+        "sek",
+        "ama"
+      ],
+      [
+        "iem",
+        "pe"
+      ],
+      [
+        "so",
+        "ma"
+      ],
+      [
+        "mangko",
+        "lat"
+      ],
+      [
+        "taq",
+        "mel"
+      ],
+      [
+        "avan",
+        "hek"
+      ],
+      [
+        "veiak",
+        "mo"
+      ],
+      [
+        "mop",
+        "vana"
+      ],
+      [
+        "alhen",
+        "o"
+      ],
+      [
+        "a",
+        "do"
+      ],
+      [
+        "b",
+        "i"
+      ],
+      [
+        "e",
+        "tek"
+      ],
+      [
+        "q",
+        "an"
+      ],
+      [
+        "s",
+        "ak"
+      ],
+      [
+        "s",
+        "ama"
+      ],
+      [
+        "s",
+        "vet"
+      ],
+      [
+        "t",
+        "i"
+      ],
+      [
+        "u",
+        "a"
+      ],
+      [
+        "ma",
+        "neng"
+      ],
+      [
+        "an",
+        "o"
+      ],
+      [
+        "an",
+        "ta"
+      ],
+      [
+        "ha",
+        "p"
+      ],
+      [
+        "ha",
+        "t"
+      ],
+      [
+        "lha",
+        "i"
+      ],
+      [
+        "ie",
+        "lhem"
+      ],
+      [
+        "ne",
+        "t"
+      ],
+      [
+        "ng",
+        "vak"
+      ],
+      [
+        "kel",
+        "iaqha"
+      ],
+      [
+        "mak",
+        "va"
+      ],
+      [
+        "he",
+        "ma"
+      ],
+      [
+        "ang",
+        "en"
+      ],
+      [
+        "ang",
+        "kelha"
+      ],
+      [
+        "mok",
+        "he"
+      ],
+      [
+        "ves",
+        "ke"
+      ],
+      [
+        "as",
+        "makmekama"
+      ],
+      [
+        "es",
+        "tanc"
+      ],
+      [
+        "et",
+        "anlheng"
+      ],
+      [
+        "nel",
+        "tema"
+      ],
+      [
+        "iep",
+        "ok"
+      ],
+      [
+        "tan",
+        "iek"
+      ],
+      [
+        "lo",
+        "ma"
+      ],
+      [
+        "pkel",
+        "paqmeiasma"
+      ],
+      [
+        "lheng",
+        "ama"
+      ],
+      [
+        "sa",
+        "v"
+      ],
+      [
+        "19",
+        "00"
+      ],
+      [
+        "kakto",
+        "nak"
+      ],
+      [
+        "iaqte",
+        "pa"
+      ],
+      [
+        "a",
+        "vok"
+      ],
+      [
+        "e",
+        "ta"
+      ],
+      [
+        "k",
+        "iavai"
+      ],
+      [
+        "l",
+        "et"
+      ],
+      [
+        "p",
+        "ri"
+      ],
+      [
+        "s",
+        "ma"
+      ],
+      [
+        "s",
+        "kek"
+      ],
+      [
+        "lh",
+        "ak"
+      ],
+      [
+        "an",
+        "kok"
+      ],
+      [
+        "ak",
+        "te"
+      ],
+      [
+        "ka",
+        "iam"
+      ],
+      [
+        "ha",
+        "vok"
+      ],
+      [
+        "ap",
+        "tak"
+      ],
+      [
+        "ap",
+        "io"
+      ],
+      [
+        "ap",
+        "tek"
+      ],
+      [
+        "nak",
+        "ha"
+      ],
+      [
+        "me",
+        "i"
+      ],
+      [
+        "me",
+        "lh"
+      ],
+      [
+        "van",
+        "ek"
+      ],
+      [
+        "he",
+        "ian"
+      ],
+      [
+        "se",
+        "va"
+      ],
+      [
+        "va",
+        "t"
+      ],
+      [
+        "sek",
+        "la"
+      ],
+      [
+        "iak",
+        "me"
+      ],
+      [
+        "iak",
+        "mek"
+      ],
+      [
+        "hak",
+        "o"
+      ],
+      [
+        "lhek",
+        "mo"
+      ],
+      [
+        "leng",
+        "ua"
+      ],
+      [
+        "iang",
+        "kek"
+      ],
+      [
+        "mangko",
+        "k"
+      ],
+      [
+        "le",
+        "to"
+      ],
+      [
+        "vaiak",
+        "mek"
+      ],
+      [
+        "apan",
+        "kok"
+      ],
+      [
+        "nengak",
+        "heng"
+      ],
+      [
+        "tenna",
+        "ma"
+      ],
+      [
+        "i",
+        "n"
+      ],
+      [
+        "o",
+        "ta"
+      ],
+      [
+        "u",
+        "n"
+      ],
+      [
+        "ak",
+        "tek"
+      ],
+      [
+        "ta",
+        "sek"
+      ],
+      [
+        "ta",
+        "pe"
+      ],
+      [
+        "ka",
+        "he"
+      ],
+      [
+        "ap",
+        "tema"
+      ],
+      [
+        "neng",
+        "a"
+      ],
+      [
+        "se",
+        "m"
+      ],
+      [
+        "po",
+        "tanha"
+      ],
+      [
+        "as",
+        "ke"
+      ],
+      [
+        "et",
+        "ne"
+      ],
+      [
+        "lo",
+        "makha"
+      ],
+      [
+        "pkel",
+        "vaneiam"
+      ],
+      [
+        "ngkot",
+        "iepok"
+      ],
+      [
+        "mas",
+        "kek"
+      ],
+      [
+        "sep",
+        "po"
+      ],
+      [
+        "nne",
+        "lha"
+      ],
+      [
+        "pen",
+        "es"
+      ],
+      [
+        "ske",
+        "ma"
+      ],
+      [
+        "eiet",
+        "ka"
+      ],
+      [
+        "pong",
+        "ha"
+      ],
+      [
+        "lhto",
+        "ka"
+      ],
+      [
+        "ig",
+        "les"
+      ],
+      [
+        "estanc",
+        "ia"
+      ],
+      [
+        "igles",
+        "ia"
+      ],
+      [
+        "a",
+        "ie"
+      ],
+      [
+        "g",
+        "a"
+      ],
+      [
+        "n",
+        "tek"
+      ],
+      [
+        "o",
+        "m"
+      ],
+      [
+        "o",
+        "r"
+      ],
+      [
+        "p",
+        "ta"
+      ],
+      [
+        "p",
+        "iavai"
+      ],
+      [
+        "s",
+        "ket"
+      ],
+      [
+        "u",
+        "e"
+      ],
+      [
+        "ak",
+        "iet"
+      ],
+      [
+        "ko",
+        "n"
+      ],
+      [
+        "ha",
+        "lhe"
+      ],
+      [
+        "mo",
+        "t"
+      ],
+      [
+        "lha",
+        "t"
+      ],
+      [
+        "ve",
+        "ta"
+      ],
+      [
+        "me",
+        "s"
+      ],
+      [
+        "me",
+        "mong"
+      ],
+      [
+        "van",
+        "eng"
+      ],
+      [
+        "kel",
+        "lan"
+      ],
+      [
+        "he",
+        "t"
+      ],
+      [
+        "se",
+        "ihengka"
+      ],
+      [
+        "se",
+        "vhen"
+      ],
+      [
+        "la",
+        "gu"
+      ],
+      [
+        "ngko",
+        "lhek"
+      ],
+      [
+        "pa",
+        "t"
+      ],
+      [
+        "mma",
+        "p"
+      ],
+      [
+        "pai",
+        "se"
+      ],
+      [
+        "pe",
+        "lh"
+      ],
+      [
+        "alh",
+        "kaiam"
+      ],
+      [
+        "pkel",
+        "vesa"
+      ],
+      [
+        "ien",
+        "aq"
+      ],
+      [
+        "mas",
+        "ke"
+      ],
+      [
+        "apkel",
+        "vaneiam"
+      ],
+      [
+        "iemmen",
+        "ek"
+      ],
+      [
+        "pek",
+        "hai"
+      ],
+      [
+        "valh",
+        "o"
+      ],
+      [
+        "kas",
+        "kek"
+      ],
+      [
+        "iok",
+        "ha"
+      ],
+      [
+        "iok",
+        "ho"
+      ],
+      [
+        "nai",
+        "kama"
+      ],
+      [
+        "pel",
+        "ten"
+      ],
+      [
+        "nemma",
+        "skema"
+      ],
+      [
+        "nian",
+        "ema"
+      ],
+      [
+        "talhe",
+        "skama"
+      ],
+      [
+        "kie",
+        "to"
+      ],
+      [
+        "nekma",
+        "skama"
+      ],
+      [
+        "mangkolat",
+        "sema"
+      ],
+      [
+        "bi",
+        "b"
+      ],
+      [
+        "keliaqha",
+        "va"
+      ],
+      [
+        "lagu",
+        "na"
+      ],
+      [
+        "a",
+        "ha"
+      ],
+      [
+        "a",
+        "ho"
+      ],
+      [
+        "g",
+        "r"
+      ],
+      [
+        "h",
+        "ang"
+      ],
+      [
+        "i",
+        "eng"
+      ],
+      [
+        "k",
+        "angkek"
+      ],
+      [
+        "l",
+        "ai"
+      ],
+      [
+        "n",
+        "t"
+      ],
+      [
+        "p",
+        "ro"
+      ],
+      [
+        "q",
+        "alh"
+      ],
+      [
+        "s",
+        "te"
+      ],
+      [
+        "u",
+        "l"
+      ],
+      [
+        "y",
+        "a"
+      ],
+      [
+        "ma",
+        "l"
+      ],
+      [
+        "an",
+        "tak"
+      ],
+      [
+        "eng",
+        "el"
+      ],
+      [
+        "eng",
+        "iak"
+      ],
+      [
+        "ie",
+        "lhva"
+      ],
+      [
+        "ia",
+        "iet"
+      ],
+      [
+        "te",
+        "so"
+      ],
+      [
+        "ne",
+        "lha"
+      ],
+      [
+        "ne",
+        "ia"
+      ],
+      [
+        "ne",
+        "mok"
+      ],
+      [
+        "ng",
+        "vakmek"
+      ],
+      [
+        "ap",
+        "temak"
+      ],
+      [
+        "ap",
+        "vaneiam"
+      ],
+      [
+        "ap",
+        "iemmenek"
+      ],
+      [
+        "me",
+        "iek"
+      ],
+      [
+        "neng",
+        "kek"
+      ],
+      [
+        "kel",
+        "vaneiam"
+      ],
+      [
+        "he",
+        "i"
+      ],
+      [
+        "he",
+        "lha"
+      ],
+      [
+        "to",
+        "makha"
+      ],
+      [
+        "io",
+        "n"
+      ],
+      [
+        "iet",
+        "ek"
+      ],
+      [
+        "al",
+        "vaneiam"
+      ],
+      [
+        "pai",
+        "hak"
+      ],
+      [
+        "ket",
+        "se"
+      ],
+      [
+        "iak",
+        "mo"
+      ],
+      [
+        "ian",
+        "lha"
+      ],
+      [
+        "lhan",
+        "kok"
+      ],
+      [
+        "aq",
+        "tek"
+      ],
+      [
+        "tep",
+        "ak"
+      ],
+      [
+        "do",
+        "s"
+      ],
+      [
+        "vaiak",
+        "mok"
+      ],
+      [
+        "nie",
+        "he"
+      ],
+      [
+        "apket",
+        "kok"
+      ],
+      [
+        "avan",
+        "he"
+      ],
+      [
+        "meiak",
+        "ha"
+      ],
+      [
+        "misio",
+        "n"
+      ],
+      [
+        "akie",
+        "to"
+      ],
+      [
+        "av",
+        "hak"
+      ],
+      [
+        "nna",
+        "vek"
+      ],
+      [
+        "tr",
+        "es"
+      ],
+      [
+        "qan",
+        "et"
+      ],
+      [
+        "iokha",
+        "lhma"
+      ],
+      [
+        "nianema",
+        "na"
+      ],
+      [
+        "bib",
+        "li"
+      ],
+      [
+        "a",
+        "mo"
+      ],
+      [
+        "a",
+        "me"
+      ],
+      [
+        "b",
+        "an"
+      ],
+      [
+        "c",
+        "en"
+      ],
+      [
+        "f",
+        "a"
+      ],
+      [
+        "i",
+        "kama"
+      ],
+      [
+        "k",
+        "to"
+      ],
+      [
+        "l",
+        "temo"
+      ],
+      [
+        "m",
+        "u"
+      ],
+      [
+        "p",
+        "temak"
+      ],
+      [
+        "s",
+        "an"
+      ],
+      [
+        "s",
+        "tema"
+      ],
+      [
+        "s",
+        "ken"
+      ],
+      [
+        "u",
+        "po"
+      ],
+      [
+        "u",
+        "dio"
+      ],
+      [
+        "ma",
+        "lhek"
+      ],
+      [
+        "lh",
+        "ko"
+      ],
+      [
+        "an",
+        "lha"
+      ],
+      [
+        "ak",
+        "vesa"
+      ],
+      [
+        "ke",
+        "iet"
+      ],
+      [
+        "ka",
+        "mo"
+      ],
+      [
+        "ha",
+        "lhema"
+      ],
+      [
+        "ia",
+        "pom"
+      ],
+      [
+        "ne",
+        "lh"
+      ],
+      [
+        "ve",
+        "tek"
+      ],
+      [
+        "ap",
+        "ka"
+      ],
+      [
+        "ap",
+        "va"
+      ],
+      [
+        "ap",
+        "ieiam"
+      ],
+      [
+        "ai",
+        "kamok"
+      ],
+      [
+        "he",
+        "tav"
+      ],
+      [
+        "ho",
+        "ie"
+      ],
+      [
+        "po",
+        "ra"
+      ],
+      [
+        "sek",
+        "he"
+      ],
+      [
+        "ngko",
+        "m"
+      ],
+      [
+        "vak",
+        "tamo"
+      ],
+      [
+        "as",
+        "kel"
+      ],
+      [
+        "vo",
+        "m"
+      ],
+      [
+        "iek",
+        "pel"
+      ],
+      [
+        "et",
+        "sep"
+      ],
+      [
+        "ket",
+        "ko"
+      ],
+      [
+        "met",
+        "kelha"
+      ],
+      [
+        "ken",
+        "ek"
+      ],
+      [
+        "at",
+        "ko"
+      ],
+      [
+        "leng",
+        "ie"
+      ],
+      [
+        "iang",
+        "ko"
+      ],
+      [
+        "lhan",
+        "ie"
+      ],
+      [
+        "teng",
+        "ia"
+      ],
+      [
+        "mas",
+        "ma"
+      ],
+      [
+        "le",
+        "lha"
+      ],
+      [
+        "tep",
+        "kek"
+      ],
+      [
+        "sema",
+        "na"
+      ],
+      [
+        "ven",
+        "aq"
+      ],
+      [
+        "cas",
+        "ani"
+      ],
+      [
+        "est",
+        "udio"
+      ],
+      [
+        "akie",
+        "lhna"
+      ],
+      [
+        "takmel",
+        "akho"
+      ],
+      [
+        "vakka",
+        "hak"
+      ],
+      [
+        "ketlheng",
+        "kap"
+      ],
+      [
+        "sama",
+        "neia"
+      ],
+      [
+        "seva",
+        "laq"
+      ],
+      [
+        "gr",
+        "upo"
+      ],
+      [
+        "ielhva",
+        "sema"
+      ],
+      [
+        "ban",
+        "co"
+      ],
+      [
+        "casani",
+        "llo"
+      ],
+      [
+        "c",
+        "ho"
+      ],
+      [
+        "d",
+        "i"
+      ],
+      [
+        "e",
+        "mo"
+      ],
+      [
+        "e",
+        "man"
+      ],
+      [
+        "f",
+        "es"
+      ],
+      [
+        "l",
+        "ia"
+      ],
+      [
+        "l",
+        "io"
+      ],
+      [
+        "n",
+        "nek"
+      ],
+      [
+        "n",
+        "oka"
+      ],
+      [
+        "o",
+        "n"
+      ],
+      [
+        "o",
+        "nhan"
+      ],
+      [
+        "s",
+        "nema"
+      ],
+      [
+        "s",
+        "keng"
+      ],
+      [
+        "v",
+        "ap"
+      ],
+      [
+        "ma",
+        "lh"
+      ],
+      [
+        "ma",
+        "soma"
+      ],
+      [
+        "ha",
+        "lh"
+      ],
+      [
+        "te",
+        "lha"
+      ],
+      [
+        "te",
+        "iap"
+      ],
+      [
+        "ap",
+        "ie"
+      ],
+      [
+        "ap",
+        "toma"
+      ],
+      [
+        "ap",
+        "pok"
+      ],
+      [
+        "me",
+        "tek"
+      ],
+      [
+        "kel",
+        "la"
+      ],
+      [
+        "kel",
+        "paqmeiasma"
+      ],
+      [
+        "kel",
+        "paqvaiam"
+      ],
+      [
+        "he",
+        "m"
+      ],
+      [
+        "se",
+        "lhanhan"
+      ],
+      [
+        "lhta",
+        "m"
+      ],
+      [
+        "mok",
+        "lhem"
+      ],
+      [
+        "men",
+        "asma"
+      ],
+      [
+        "kelha",
+        "m"
+      ],
+      [
+        "vak",
+        "me"
+      ],
+      [
+        "vak",
+        "hak"
+      ],
+      [
+        "vo",
+        "mo"
+      ],
+      [
+        "al",
+        "an"
+      ],
+      [
+        "kak",
+        "hama"
+      ],
+      [
+        "so",
+        "ngkek"
+      ],
+      [
+        "lheng",
+        "a"
+      ],
+      [
+        "mas",
+        "ka"
+      ],
+      [
+        "iaq",
+        "iema"
+      ],
+      [
+        "kas",
+        "ke"
+      ],
+      [
+        "vang",
+        "kok"
+      ],
+      [
+        "lho",
+        "ng"
+      ],
+      [
+        "vaiak",
+        "mo"
+      ],
+      [
+        "lhen",
+        "ek"
+      ],
+      [
+        "ven",
+        "aqtema"
+      ],
+      [
+        "vet",
+        "ang"
+      ],
+      [
+        "cas",
+        "ado"
+      ],
+      [
+        "??",
+        "?"
+      ],
+      [
+        "nap",
+        "a"
+      ],
+      [
+        "nien",
+        "telhe"
+      ],
+      [
+        "elh",
+        "nemok"
+      ],
+      [
+        "talh",
+        "nema"
+      ],
+      [
+        "nep",
+        "tamen"
+      ],
+      [
+        "paihek",
+        "ha"
+      ],
+      [
+        "taiep",
+        "e"
+      ],
+      [
+        "lhai",
+        "voma"
+      ],
+      [
+        "pri",
+        "me"
+      ],
+      [
+        "vat",
+        "io"
+      ],
+      [
+        "pro",
+        "fes"
+      ],
+      [
+        "profes",
+        "or"
+      ],
+      [
+        "1",
+        "4"
+      ],
+      [
+        "6",
+        "2"
+      ],
+      [
+        "a",
+        "lhe"
+      ],
+      [
+        "a",
+        "la"
+      ],
+      [
+        "b",
+        "ri"
+      ],
+      [
+        "c",
+        "e"
+      ],
+      [
+        "e",
+        "pai"
+      ],
+      [
+        "i",
+        "ta"
+      ],
+      [
+        "j",
+        "o"
+      ],
+      [
+        "k",
+        "temo"
+      ],
+      [
+        "l",
+        "en"
+      ],
+      [
+        "m",
+        "m"
+      ],
+      [
+        "n",
+        "ang"
+      ],
+      [
+        "n",
+        "lhaniek"
+      ],
+      [
+        "p",
+        "van"
+      ],
+      [
+        "p",
+        "la"
+      ],
+      [
+        "p",
+        "kak"
+      ],
+      [
+        "p",
+        "kem"
+      ],
+      [
+        "s",
+        "ta"
+      ],
+      [
+        "s",
+        "ok"
+      ],
+      [
+        "s",
+        "paivoma"
+      ],
+      [
+        "s",
+        "vanek"
+      ],
+      [
+        "t",
+        "kok"
+      ],
+      [
+        "an",
+        "ma"
+      ],
+      [
+        "ak",
+        "he"
+      ],
+      [
+        "ta",
+        "mak"
+      ],
+      [
+        "ko",
+        "lh"
+      ],
+      [
+        "ko",
+        "la"
+      ],
+      [
+        "mo",
+        "i"
+      ],
+      [
+        "mo",
+        "to"
+      ],
+      [
+        "mo",
+        "ngke"
+      ],
+      [
+        "ia",
+        "pa"
+      ],
+      [
+        "ia",
+        "masma"
+      ],
+      [
+        "ng",
+        "kak"
+      ],
+      [
+        "ng",
+        "vai"
+      ],
+      [
+        "ng",
+        "kai"
+      ],
+      [
+        "ap",
+        "en"
+      ],
+      [
+        "ap",
+        "te"
+      ],
+      [
+        "ap",
+        "valhok"
+      ],
+      [
+        "ap",
+        "nemakha"
+      ],
+      [
+        "ap",
+        "etek"
+      ],
+      [
+        "ap",
+        "veske"
+      ],
+      [
+        "ai",
+        "kama"
+      ],
+      [
+        "nak",
+        "te"
+      ],
+      [
+        "neng",
+        "el"
+      ],
+      [
+        "kel",
+        "ie"
+      ],
+      [
+        "kel",
+        "iang"
+      ],
+      [
+        "lhe",
+        "p"
+      ],
+      [
+        "va",
+        "skama"
+      ],
+      [
+        "men",
+        "ia"
+      ],
+      [
+        "pa",
+        "ra"
+      ],
+      [
+        "mma",
+        "skeng"
+      ],
+      [
+        "nen",
+        "tek"
+      ],
+      [
+        "nen",
+        "nema"
+      ],
+      [
+        "nen",
+        "lhengama"
+      ],
+      [
+        "as",
+        "a"
+      ],
+      [
+        "as",
+        "o"
+      ],
+      [
+        "nan",
+        "kok"
+      ],
+      [
+        "kan",
+        "ma"
+      ],
+      [
+        "al",
+        "iem"
+      ],
+      [
+        "al",
+        "eman"
+      ],
+      [
+        "ket",
+        "keiet"
+      ],
+      [
+        "at",
+        "kok"
+      ],
+      [
+        "nema",
+        "t"
+      ],
+      [
+        "niekhe",
+        "m"
+      ],
+      [
+        "leng",
+        "ai"
+      ],
+      [
+        "lheng",
+        "ke"
+      ]
+    ]
+  }
+}
