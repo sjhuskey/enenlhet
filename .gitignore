@@ -2,8 +2,22 @@ Icon?
 "Icon\r"
 .dropbox
 .ipynb_checkpoints/
-# Directory for Audio and ELAN files
+
+# Directories for Audio and ELAN files
 data/
+new-data/
+python/transcripts.txt
+
+# Directories for models and model outputs
+python/whisper_finetune_cpu
+python/trainer_output
+whisper_finetune_cpu/
+
+# Dataset
+python/whisper_prepared_dataset
+
+# Tokenizer
+python/custom-tokenizer/
 
 # LibreOffice locks
 .~lock.*#
