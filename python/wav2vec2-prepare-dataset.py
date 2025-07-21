@@ -277,8 +277,3 @@ print("Dataset preparation complete.")
 
 dataset.save_to_disk("/Users/sjhuskey/enenlhet-wav2vec2-dataset")
 print("Dataset saved to /Users/sjhuskey/enenlhet-wav2vec2-dataset")
-
-# Upload to Hugging Face Hub
-notebook_login()
-dataset.push_to_hub("enenlhet-wav2vec2-dataset", private=True, commit_message="First upload of corrected dataset")
-print("Dataset pushed to Hugging Face Hub as 'enenlhet-asr/enenlhet-wav2vec2-dataset'")
