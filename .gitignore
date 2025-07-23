@@ -2,6 +2,7 @@ Icon?
 "Icon\r"
 .dropbox
 .ipynb_checkpoints/
+__pycache__/
 
 # Directories for Audio and ELAN files
 data/
