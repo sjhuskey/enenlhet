@@ -1,3 +1,23 @@
+"""
+Script to prepare the dataset for Whisper fine-tuning.
+
+Handles both the audio and text data preparation. Identifies
+the correct tier in the ELAN transcription files. Excludes any
+that are outside of the specified duration range. Processes
+audio files by resampling to 16kHz, switching to mono, and
+segmenting the files into smaller chunks. Returns a JSON file
+that collates audio file paths with their corresponding text
+annotations. That JSON file is then used to create a Hugging Face
+Dataset for training.
+
+Usage: Set the `data_dir` variable to point to the directory
+containing your audio and ELAN files, then run the script with
+`python whisper-prepare-dataset.py`.
+
+author: Samuel J. Huskey, with assistance from Chat-GPT
+date: 2025-08-20
+"""
+# --- Import libraries ---
 import os
 import json
 from glob import glob
@@ -7,11 +27,15 @@ from datasets import load_dataset, Audio, ClassLabel, Dataset, DatasetDict
 from datasets import load_from_disk
 from collections import Counter
 from transformers import WhisperProcessor, WhisperTokenizer, WhisperFeatureExtractor
+import subprocess
 
 # --- Configuration ---
 data_dir = "/Users/sjhuskey/enenlhet-raw-data"  # replace with your folder path
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
+
+# --- Process ELAN files ---
+# Identify valid tiers and extract annotations
 valid_tiers = [
     'transcript_MR', 'Transcript', 'transcript_ER', 'transcript_LF',
     'transcript_LM', 'transcript_MM', 'transcript_TF', 'transcript_SSA',
@@ -23,6 +47,13 @@ max_duration = 20.0  # seconds
 
 # --- Helper Function ---
 def parse_eaf(eaf_path):
+    """
+    Parse an ELAN EAF file and extract relevant annotations.
+    Args:
+        eaf_path (str): The file path to the ELAN EAF file.
+    Returns:
+        list: A list of extracted annotations.
+    """
     tree = ET.parse(eaf_path)
     root = tree.getroot()
     ns = {'elan': 'http://www.w3.org/2001/XMLSchema-instance'}
@@ -92,9 +123,6 @@ for eaf_path in all_eafs:
 print(f"Extracted {len(entries)} segments from {len(all_eafs)} files.")
 
 # --- Extract Physical Audio Segments (Like Your Colleague) ---
-import os
-from pydub import AudioSegment
-
 # Create output directory for segmented audio
 segment_dir = "/Users/sjhuskey/enenlhet-segmented-audio-whisper"
 os.makedirs(segment_dir, exist_ok=True)
@@ -150,8 +178,8 @@ print(f"Extracted {len(segmented_entries)} physical audio segments")
 # Replace the original entries
 entries = segmented_entries
 
+# --- Save to JSONL ---
 output_jsonl = "/Users/sjhuskey/enenlhet-raw-data/enenlhet-whisper-segmented.jsonl"
-
 with open(output_jsonl, "w", encoding="utf-8") as f:
     for entry in entries:
         json.dump({
@@ -163,11 +191,10 @@ with open(output_jsonl, "w", encoding="utf-8") as f:
 print(f"Saved Whisper-style segmented JSONL to {output_jsonl}")
 
 # Check the size difference
-import subprocess
 result = subprocess.run(['du', '-sh', segment_dir], capture_output=True, text=True)
 if result.returncode == 0:
     print(f"Total segmented audio size: {result.stdout.strip().split()[0]}")
-    
+
 # Show a sample entry
 print(f"\nSample segmented entry:")
 print(f"Audio path: {entries[0]['audio']['path']}")
@@ -180,6 +207,7 @@ if os.path.exists(sample_path):
     duration = len(segment) / 1000
     print(f"Sample segment duration: {duration:.2f} seconds")
 
+# --- Prepare Hugging Face Dataset ---
 print("Loading dataset...")
 dataset = load_dataset("json", data_files="/Users/sjhuskey/enenlhet-raw-data/enenlhet-whisper-segmented.jsonl", split="train")
 # Convert audio paths to Audio objects
@@ -204,6 +232,13 @@ processor = WhisperProcessor.from_pretrained("openai/whisper-small")
 processor.tokenizer.set_prefix_tokens(language=None, task=None)
 
 def prepare_dataset(batch):
+    """
+    Prepares the dataset by extracting audio features and tokenizing text.
+    Args:
+        batch (dict): A batch of data containing audio and text fields.
+    Returns:
+        dict: The processed batch with input features and labels.
+    """
     audio = batch["audio"]
 
     batch["input_features"] = processor.feature_extractor(

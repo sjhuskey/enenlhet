@@ -1,10 +1,23 @@
+"""
+Script for handling Dropbox file operations
+
+Facilitates the use of Dropbox as the storage backend for work
+done on Google Colab.
+
+Usage: Save this file in the root of a Colab environment and
+include `import dropbox_util` with other import statements.
+You must create a Dropbox app and generate an access token.
+Log on to Dropbox and go to https://www.dropbox.com/developers/apps 
+to create an app.
+"""
+
 import dropbox
 import os
 import requests
 from requests.auth import HTTPBasicAuth
 
 # 1. Dropbox Setup
-DROPBOX_ACCESS_TOKEN = 'insert_your_access_token_here'  # paste manually each session
+DROPBOX_ACCESS_TOKEN = 'insert_access_token_here'  # paste manually each session
 
 def initialize_dropbox(access_token):
     """Initialize Dropbox client with access token"""

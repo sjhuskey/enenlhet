@@ -1,3 +1,23 @@
+"""
+Script to prepare the dataset for Wav2Vec2 fine-tuning.
+
+Handles both the audio and text data preparation. Identifies
+the correct tier in the ELAN transcription files. Excludes any
+that are outside of the specified duration range. Processes
+audio files by resampling to 16kHz, switching to mono, and
+segmenting the files into smaller chunks. Returns a JSON file
+that collates audio file paths with their corresponding text
+annotations. That JSON file is then used to create a Hugging Face
+Dataset for training.
+
+Usage: Set the `data_dir` variable to point to the directory 
+containing your audio and ELAN files, then run the script with
+`python wav2vec2-prepare-dataset.py`.
+
+author: Samuel J. Huskey, with assistance from Chat-GPT
+date: 2025-08-20
+"""
+# --- Import libraries ---
 import os
 import json
 from glob import glob
@@ -8,6 +28,8 @@ from datasets import load_from_disk
 from collections import Counter
 from transformers import Wav2Vec2CTCTokenizer, Wav2Vec2FeatureExtractor, Wav2Vec2Processor
 from huggingface_hub import notebook_login
+import subprocess
+import re
 import random
 import pandas as pd
 
@@ -15,6 +37,9 @@ import pandas as pd
 data_dir = "/Users/sjhuskey/enenlhet-raw-data"  # replace with your folder path
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
+
+# --- Process ELAN files ---
+# Identify valid tiers and extract annotations
 valid_tiers = [
     'transcript_MR', 'Transcript', 'transcript_ER', 'transcript_LF',
     'transcript_LM', 'transcript_MM', 'transcript_TF', 'transcript_SSA',
@@ -26,6 +51,12 @@ max_duration = 20.0  # seconds
 
 # --- Helper Function ---
 def parse_eaf(eaf_path):
+    """
+    Parse an ELAN EAF file and extract relevant annotations.
+    Args:
+        eaf_path (str): The file path to the ELAN EAF file.Returns:
+        list: A list of extracted annotations.
+    """
     tree = ET.parse(eaf_path)
     root = tree.getroot()
     ns = {'elan': 'http://www.w3.org/2001/XMLSchema-instance'}
@@ -62,7 +93,7 @@ def parse_eaf(eaf_path):
             })
     return annotations
 
-# --- Main Extraction ---
+# Main Extraction
 entries = []
 all_eafs = sorted(glob(os.path.join(data_dir, "*.eaf")))
 
@@ -94,10 +125,7 @@ for eaf_path in all_eafs:
 
 print(f"Extracted {len(entries)} segments from {len(all_eafs)} files.")
 
-# --- Extract Physical Audio Segments (Like Your Colleague) ---
-import os
-from pydub import AudioSegment
-
+# --- Extract Physical Audio ---
 # Create output directory for segmented audio
 segment_dir = "/Users/sjhuskey/enenlhet-segmented-audio"
 os.makedirs(segment_dir, exist_ok=True)
@@ -153,7 +181,7 @@ print(f"Extracted {len(segmented_entries)} physical audio segments")
 # Replace the original entries
 entries = segmented_entries
 
-# --- Save to JSONL (Now with Segmented Audio) ---
+# --- Save to JSONL ---
 output_jsonl = "/Users/sjhuskey/enenlhet-raw-data/enenlhet-w2v2-segmented.jsonl"
 
 with open(output_jsonl, "w", encoding="utf-8") as f:
@@ -165,11 +193,10 @@ print(f"Saved segmented JSONL to {output_jsonl}")
 print(f"Each entry now points to a physical audio segment file")
 
 # Check the size difference
-import subprocess
 result = subprocess.run(['du', '-sh', segment_dir], capture_output=True, text=True)
 if result.returncode == 0:
     print(f"Total segmented audio size: {result.stdout.strip().split()[0]}")
-    
+
 # Show a sample entry
 print(f"\nSample segmented entry:")
 print(f"Audio path: {entries[0]['audio']['path']}")
@@ -182,6 +209,7 @@ if os.path.exists(sample_path):
     duration = len(segment) / 1000
     print(f"Sample segment duration: {duration:.2f} seconds")
 
+# --- Prepare Hugging Face Dataset ---
 print("Loading dataset...")
 dataset = load_dataset("json", data_files="/Users/sjhuskey/enenlhet-raw-data/enenlhet-w2v2-segmented.jsonl", split="train")
 # Convert audio paths to Audio objects
@@ -201,11 +229,17 @@ dataset = DatasetDict({
 
 print(f"Dataset sizes: train={len(dataset['train'])}, test={len(dataset['test'])}, validation={len(dataset['validation'])}")
 
+# --- Make a Custom Processor ---
+# Get the vocabulary
 print("Removing special characters from text...")
-import re
 chars_to_ignore_regex = r'[\(\)\[\]\*\?\,\.\!\-\;\:\"\“\%\‘\”\�]'
 
 def remove_special_characters(batch):
+    """
+    Remove special characters from the text.
+    Args:
+        batch: A batch of dataset entries.
+    """
     batch["text"] = re.sub(chars_to_ignore_regex, '', batch["text"]).lower() + " "
     return batch
 
@@ -216,6 +250,13 @@ dataset["validation"] = dataset["validation"].map(remove_special_characters)
 print("Special characters removed from text.")
 
 def extract_all_chars(batch):
+  """
+  Extract all unique characters from the text.
+  Args:
+      batch: A batch of dataset entries.
+  Returns:
+      dict: A dictionary containing the vocabulary and all text.
+  """
   all_text = " ".join(batch["text"])
   vocab = list(set(all_text))
   return {"vocab": [vocab], "all_text": [all_text]}
@@ -233,13 +274,13 @@ vocab_dict["[PAD]"] = len(vocab_dict)
 len(vocab_dict)
 del vocab_dict[" "]
 print(f"Vocabulary size: {len(vocab_dict)} characters")
-
+# Save vocabulary to a JSON file
 with open('/Users/sjhuskey/enenlhet-wav2vec2-processor/vocab.json', 'w') as vocab_file:
     json.dump(vocab_dict, vocab_file)
 
-
 print("Vocabulary saved to /Users/sjhuskey/enenlhet-wav2vec2-processor/vocab.json")
 
+# Create tokenizer and feature extractor
 print("Creating Wav2Vec2 tokenizer and feature extractor...")
 tokenizer = Wav2Vec2CTCTokenizer(
     "/Users/sjhuskey/enenlhet-wav2vec2-processor/vocab.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|"
@@ -256,11 +297,18 @@ print("Input array shape:", dataset["train"][rand_int]["audio"]["array"].shape)
 print("Sampling rate:", dataset["train"][rand_int]["audio"]["sampling_rate"])
 
 def prepare_dataset(batch):
+    """
+    Prepare the dataset for training by processing audio and text.
+    Args:
+        batch: A batch of dataset entries.
+    Returns:
+        dict: The processed batch with input features and labels.
+    """
     audio = batch["audio"]
 
     # batched output is "un-batched"
     batch["input_values"] = processor(audio["array"], sampling_rate=audio["sampling_rate"]).input_values[0]
-    
+
     batch["labels"] = processor(text=batch["text"]).input_ids
     return batch
 
@@ -274,6 +322,5 @@ print("Preparing validation dataset...")
 dataset["validation"] = dataset["validation"].map(prepare_dataset, remove_columns=["audio", "text"], num_proc=4)
 print("Validation dataset prepared.")
 print("Dataset preparation complete.")
-
 dataset.save_to_disk("/Users/sjhuskey/enenlhet-wav2vec2-dataset")
 print("Dataset saved to /Users/sjhuskey/enenlhet-wav2vec2-dataset")

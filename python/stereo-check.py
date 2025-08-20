@@ -1,8 +1,14 @@
+"""
+Checks audio files for stereo channels and converts them to mono if necessary.
+
+Usage: Set the audio directory variable and then run `python stereo-check.py`
+"""
+
 from pydub import AudioSegment
 import os
 from glob import glob
 
-# Set this to the path where your .wav files are located
+# Set this to the path where the .wav files are located
 audio_dir = "/Users/sjhuskey/enenlhet-raw-data"
 
 # Loop through all .wav files in the directory
