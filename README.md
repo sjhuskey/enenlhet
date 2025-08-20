@@ -1,3 +1,31 @@
 # README
 
-Repository for training a model to transcribe interviews in Enenlhet.
+Repository for fine-tuning a Whisper and Wav2Vec2 models to transcribe audio files of people speaking the endangered language [Enenlhet](https://www.endangeredlanguages.com/lang/2141).
+
+## Goal
+
+To facilitate the transcription of audio and video recordings with an Automatic Speech Recognition (ASR) model fine-tuned for the Enenlhet language.
+
+## Background
+
+The scripts in this repository were developed by Samuel J. Huskey in partial fulfillment of a seed funding grant from the [University of Oklahoma](https://ou.edu/)'s [Data Institute for Societal Challenges](https://www.ou.edu/disc) (DISC). The project's title is "AI for Cost-Effective Research Workflows When Funding is Scarce" (co-PI's: Samuel J. Huskey, Raina Heaton, and Caroline T. Schroeder).
+
+This repository concerns the part of the project that seeks to use AI to accelerate the transcription of recordings of Enenlhet speakers. Currently, it takes ten hours to transcribe one hour of audio. The transcription process is tedious, expensive, and, owing to distance and technical issues, complex to manage. If an Automatic Speech Recognition model could be fine-tuned to produce reliable transcriptions, the transcribers could spend less time on tedious transcription tasks and more time on quality control.
+
+This part of the project owes much to the work that Heaton did previously with Dr. [Emily Prud'hommeaux](https://www.bc.edu/bc-web/schools/morrissey/departments/computer-science/people/faculty-directory/emily-prudhommeaux.html) and Dr. [Éric Le Ferrand](https://www.bc.edu/bc-web/schools/morrissey/departments/computer-science/people/postdoctoral-fellows/eric-le-ferrend.html), two researchers at Boston University ([Enenlhet as a case-study to investigate ASR model generalizability for language documentation](https://aclanthology.org/2024.americasnlp-1.15/) (Le Ferrand et al., AmericasNLP 2024)). Huskey and Heaton are grateful to Drs. Prud'hommeaux and Ferrand for sharing their tips and advice.
+
+The scripts in this project also owe much to three tutorials:
+
+- "[Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers](https://huggingface.co/blog/fine-tune-whisper#prepare-environment)" by Sanchit Gandhi.
+- "[Fine-tuning XLS-R for Multi-Lingual ASR with 🤗 Transformers](https://huggingface.co/blog/fine-tune-xlsr-wav2vec2)", by Patrick von Platen.
+- "[Fine-Tune W2V2-Bert for low-resource ASR with 🤗 Transformers](https://huggingface.co/blog/fine-tune-w2v2-bert)", by Yoach Lacombe.
+
+It should be noted, however, that those tutorials were only starting points, since the idiosyncrasies of Enenlhet required a lot of customization.
+
+Finally, Varun Sayapaneni, Research Informatics Specialist at [OU Libraries](https://libraries.ou.edu/), contributed valuable insights and made important contributions to this part of the project.
+
+## Models and Datasets
+
+The scripts in this repository produce two models (one based on  [Meta AI](https://ai.meta.com/)'s [Wav2Vec2](https://ai.meta.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/), the other on [OpenAI](https://openai.com/)'s [Whisper](https://openai.com/index/whisper/)) and two datasets (one each for the two models).
+
+Out of respect for the speakers on the recordings and the Enenlhet community in general, neither the raw data files nor the models and datasets can be shared publicly, although the notebooks in this repository do contain some brief snippets of transcriptions. Contact [Samuel J. Huskey](mailto:huskey@ou.edu) or [Raina Heaton](mailto:rainaheaton@ou.edu) for more information on the raw data, models, and datasets.
