@@ -1,7 +1,3 @@
-"""
-Test script by Varun Sayapaneni
-"""
-
 import torch
 import soundfile as sf
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
