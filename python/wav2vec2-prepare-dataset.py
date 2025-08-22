@@ -127,7 +127,7 @@ print(f"Extracted {len(entries)} segments from {len(all_eafs)} files.")
 
 # --- Extract Physical Audio ---
 # Create output directory for segmented audio
-segment_dir = "/Users/sjhuskey/enenlhet-segmented-audio"
+segment_dir = "/Users/sjhuskey/enenlhet-segmented-audio-wav2vec2"
 os.makedirs(segment_dir, exist_ok=True)
 
 # Convert entries to actual segmented files
