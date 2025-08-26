@@ -1,6 +1,6 @@
 # README
 
-Repository for fine-tuning a Whisper and Wav2Vec2 models to transcribe audio files of people speaking the endangered language [Enenlhet](https://www.endangeredlanguages.com/lang/2141).
+Repository for fine-tuning Whisper and Wav2Vec2 models to transcribe audio files of people speaking the endangered language [Enenlhet](https://www.endangeredlanguages.com/lang/2141).
 
 ## Goal
 
@@ -26,9 +26,25 @@ Finally, Varun Sayapaneni, Research Informatics Specialist at [OU Libraries](htt
 
 ## Models and Datasets
 
-The scripts in this repository produce two models (one based on  [Meta AI](https://ai.meta.com/)'s [Wav2Vec2](https://ai.meta.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/), the other on [OpenAI](https://openai.com/)'s [Whisper](https://openai.com/index/whisper/)) and two datasets (one each for the two models).
+The scripts in this repository produce two models (one based on [Meta AI](https://ai.meta.com/)'s [Wav2Vec2](https://ai.meta.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/), the other on [OpenAI](https://openai.com/)'s [Whisper](https://openai.com/index/whisper/)) and two datasets (one each for the two models).
 
-Out of respect for the speakers on the recordings and the Enenlhet community in general, neither the raw data files nor the models and datasets can be shared publicly here, although the notebooks in this repository do contain some brief snippets of transcriptions. Please reference the [Enenlhet Documentation Project archival collection](https://ailla.utexas.org/collections/844/) at the [Archive of Indigenous Languages of the Americas](https://ailla.utexas.org/) at the University of Texas at Austin to access current copies of the original language documentation materials (audio, transcripts/translations, notes). Contact  [Raina Heaton](mailto:rainaheaton@ou.edu) for more information on the raw data. Contact [Samuel J. Huskey](mailto:huskey@ou.edu) for more information about the models and datasets.
+### Models
+
+- [sjhuskey/enenlhet-wav2vec2-model](https://huggingface.co/sjhuskey/enenlhet-wav2vec2-model)
+- [sjhuskey/enenlhet-whisper-model](https://huggingface.co/sjhuskey/enenlhet-whisper-model)
+
+### Datasets
+
+- [sjhuskey/enenlhet-wav2vec2-dataset](https://huggingface.co/datasets/sjhuskey/enenlhet-wav2vec2-dataset)
+- [sjhuskey/enenlhet-whisper-dataset](https://huggingface.co/datasets/sjhuskey/enenlhet-whisper-dataset)
+
+The datasets required preprocessing to segment the transcription files and to segment and normalize the audio files by resampling them to 16kHz and converting them to mono.
+
+Please reference the [Enenlhet Documentation Project archival collection](https://ailla.utexas.org/collections/844/) at the [Archive of Indigenous Languages of the Americas](https://ailla.utexas.org/) at the University of Texas at Austin to access current copies of the original language documentation materials (audio, transcripts/translations, notes). 
+
+Contact  [Raina Heaton](mailto:rainaheaton@ou.edu) for more information on the raw data. 
+
+Contact [Samuel J. Huskey](mailto:huskey@ou.edu) for more information about the models and datasets.
 
 ## Attribution
 
