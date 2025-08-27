@@ -1,4 +1,4 @@
-# README
+# Fine-tuning ASR Models for Enenlhet
 
 Repository for fine-tuning Whisper and Wav2Vec2 models to transcribe audio files of people speaking the endangered language [Enenlhet](https://www.endangeredlanguages.com/lang/2141).
 
@@ -46,7 +46,9 @@ Contact  [Raina Heaton](mailto:rainaheaton@ou.edu) for more information on the r
 
 Contact [Samuel J. Huskey](mailto:huskey@ou.edu) for more information about the models and datasets.
 
-## Attribution
+***
+
+## Attributions
 
 The work in this repository was created with an even blend of human and AI contributions. AI was used to make content edits, such as changes to scope, information, and ideas. AI was used to make new content, such as text and computer code. AI was prompted for its contributions, or AI assistance was enabled. AI-generated content was reviewed and approved. The following model(s) or application(s) were used: ChatGPT 4o, Claude Sonnet 3.7, GitHub Copilot.
 
