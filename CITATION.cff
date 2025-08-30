@@ -1,0 +1,36 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Enenlhet ASR Models
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Samuel
+    name-particle: J
+    family-names: Huskey
+    email: huskey@ou.edu
+    affiliation: University of Oklahoma
+    orcid: 'https://orcid.org/0000-0002-8192-9385'
+  - given-names: Varun
+    family-names: Sayapaneni
+    email: varunsaya@ou.edu
+    affiliation: University of Oklahoma
+    orcid: 'https://orcid.org/0009-0000-1844-8039'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17009508
+repository-code: 'https://github.com/sjhuskey/enenlhet'
+abstract: >-
+  Repository for fine-tuning Whisper and Wav2Vec2 models to
+  transcribe audio files of people speaking the endangered
+  language Enenlhet,
+license: MIT
+keywords:
+  - ASR
+  - Whisper
+  - Wav2Vec2
+  - Enenlhet
+  - Language Documentation
