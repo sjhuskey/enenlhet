@@ -8,8 +8,7 @@ message: >-
   metadata from this file.
 type: software
 authors:
-  - given-names: Samuel
-    name-particle: J
+  - given-names: Samuel J.
     family-names: Huskey
     email: huskey@ou.edu
     affiliation: University of Oklahoma
