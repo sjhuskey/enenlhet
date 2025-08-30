@@ -324,3 +324,11 @@ print("Validation dataset prepared.")
 print("Dataset preparation complete.")
 dataset.save_to_disk("/Users/sjhuskey/enenlhet-wav2vec2-dataset")
 print("Dataset saved to /Users/sjhuskey/enenlhet-wav2vec2-dataset")
+
+# Make sure this has input_values and labels
+print(dataset["train"].features)
+
+dataset.push_to_hub(
+    "sjhuskey/enenlhet-wav2vec2-dataset",
+    commit_message="Fix: regenerate dataset with correct schema (input_values, labels)",
+)
