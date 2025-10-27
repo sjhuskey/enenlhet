@@ -582,7 +582,7 @@ def main():
 
     # Batch EAF templates
     ap.add_argument("--new-eaf-template", default="out/eaf/{stem}.eaf", help="NEW EAF path template (batch).")
-    ap.add_argument("--merge-eaf-template", help="EXISTING EAF path template to merge into (batch).")
+    ap.add_argument("--`-template", help="EXISTING EAF path template to merge into (batch).")
     ap.add_argument("--out-eaf-template", help="Merged EAF output path template (batch).")
 
     args = ap.parse_args()
