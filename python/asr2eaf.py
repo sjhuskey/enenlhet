@@ -588,6 +588,7 @@ def main():
     args = ap.parse_args()
 
     # Load model once for batch speed (if we will transcribe anything)
+    print("Preparing model...")
     processor = model = device = None
     will_transcribe = bool(args.wav or args.batch_dir) and not args.from_csv
     if will_transcribe:
@@ -599,6 +600,7 @@ def main():
     if args.wav or args.from_csv or align_mode:
 
         # Build/obtain rows
+        print("Processing single file...")
         if args.from_csv:
             rows = read_segments_csv(args.from_csv)
             wav_for_media = rows[0]["audio_file"] if rows else None
@@ -684,6 +686,7 @@ def main():
         # Optional EAF writing (new or merge) — unchanged:
         if not args.to_eaf:
             return
+        print("Writing EAF...")
         if args.new_eaf:
             out_eaf = args.out_eaf or args.new_eaf
             build_new_eaf(
@@ -723,7 +726,8 @@ def main():
     if not wav_paths:
         print("No WAV files found.")
         return
-
+    print(f"Found {len(wav_paths)} WAV files in batch directory.")
+    print("Processing batch...")
     for wav_path in wav_paths:
         stem = Path(wav_path).stem
         out_csv = expand_template(args.out_csv_template, wav_path)
@@ -795,7 +799,7 @@ def main():
         # ---- EAF emission ----
         if not args.to_eaf:
             continue
-
+        print(f"Writing EAF for {stem}...")
         if args.merge_eaf_template:
             if not args.out_eaf_template:
                 raise SystemExit("--merge-eaf-template requires --out-eaf-template in batch mode.")
